@@ -163,7 +163,7 @@ Saad Saheed
 - Github - https://github.com/Saad-Saheed
 - Stack - Frontend
 
-Chukwuemeka Orioha
+Chukwuemeka Orioha(Deactivated)
 - Email - chuksorioha@gmail.com
 - Github - https://github.com/Chuksorio
 - Stack - FullStack
@@ -218,7 +218,7 @@ Kenneth Akhonokhue
 - Github - https://github.com/kennethafegbai
 - Stack - FullStack
 
-Peace Oyewole
+Peace Oyewole(deactivated)
 - Email - Oyewolepeace94@gmail.com
 - Github - https://github.com/Peacefsps
 - Stack - Frontend
@@ -253,7 +253,7 @@ Adeboun Toyosi
 - Github - https://github.com/davideboun21
 - Stack - Backend
 
-Success Ogbenna
+Success Ogbenna(Deactivated)
 - Email - successzero7@gmail.com
 - Github - https://github.com/successogbenna
 - Stack - FullStack
@@ -263,7 +263,7 @@ Oke Abosede
 - GitHub - https://github.com/Ade-nike17
 - Stack - FullStack
 
-Ezemenahi Chiamaka Sylvia
+Ezemenahi Chiamaka Sylvia(Deactivated)
 - Email - ezemenahichiamaka@gmail.com
 - GitHub - https://github.com/chezclsy
 - Stack - Product Design
