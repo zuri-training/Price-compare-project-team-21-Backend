@@ -1,0 +1,124 @@
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: #ffffff;
+}
+
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ font-family: "SF Pro Text"
+}
+
+nav{
+  margin: 48px 30px;
+}
+
+ul{
+ list-style-type: none;
+ display: flex;
+ gap: 20px;
+ justify-content: flex-end;
+}
+
+li a{
+ text-decoration: none;
+ color: #000000;
+ font-weight: 500;
+ font-size: 18px;
+}
+
+.active{
+ border-bottom: 2px solid #000000;
+}
+
+
+
+/* .active{
+ border-bottom: 2px solid #000000;
+} */
+
+main{
+ width: 90%;
+ margin: 0 auto;
+}
+
+main h2{
+ font-size: 40px;
+ color: #261F1F;
+ font-weight: 600;
+ margin-bottom: 28px;
+ line-height: 47.73px;
+}
+
+main h4{
+ font-size: 28px;
+ font-weight: 500;
+ margin-bottom: 12px;
+ line-height: 33.41px;
+ color: #261F1F;
+}
+
+main p{
+ font-size: 24px;
+ font-weight: 400;
+ color: #323232;
+ margin-bottom: 24px;
+ line-height: 36px;
+}
+
+/* @media(max-width:769px){
+  nav{
+    margin: 10px;
+  }
+  li a{
+    font-size: 20px;
+  }
+  main{
+   width: 100%;
+   padding: 0 10px;
+  }
+  main h4{
+   font-size: 20px;
+  }
+  main h2{
+    font-size: 20px;
+  }
+  main p{
+   padding: 0;
+   font-size: 20px;
+  }
+} */
+
+@media (max-width: 426px){
+  nav{
+    margin: 35px;
+  }
+
+  li a{
+    font-size: 14px;
+  }
+
+  main{
+   width: 100%;
+   padding: 0 35px;
+  }
+
+  main h2{
+    font-size: 28px;
+  }
+
+  main h4{
+    font-size: 22px;
+  }
+
+  main p{
+   padding: 0;
+   font-size: 18px;
+  }
+}
