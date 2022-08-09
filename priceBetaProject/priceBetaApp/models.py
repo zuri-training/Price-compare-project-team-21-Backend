@@ -81,7 +81,11 @@ class Product(models.Model):
 
 class Wishlist(models.Model):
     wishlist_name = models.CharField(max_length=255, db_index=True)
+# <<<<<<< Updated upstream
     user = models.ForeignKey(CustomUser, related_name='wishlist', on_delete=models.CASCADE)
+# =======
+    # user = models.ForeignKey(User, related_name='wishlist', on_delete=models.CASCADE)
+# >>>>>>> Stashed changes
     item = models.ForeignKey(Product, related_name='wishlist', on_delete=models.CASCADE)
     slug = models.SlugField(max_length=255, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
