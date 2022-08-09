@@ -9,9 +9,37 @@
  <link rel="stylesheet" href="./assets/css/about.css">
 </head>
 <body>
-   <header>
-        
-   </header>
+   <header class="position-sticky top-0" style="z-index: 55;">
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">Price<span style="color: #F28202;">Beta</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <form action="" class="search-form me-lg-4 d-flex">
+                        <input type="text" class="form-control" placeholder="Search products..." aria-label="search"
+                            aria-describedby="button-search">
+                        <button class="btn text-white px-4" style="font-size: 1.2rem;" type="submit"
+                            id="button-search">Search</button>
+                    </form>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item me-lg-4">
+                            <a class="nav-link" href="#">All Categories</a>
+                        </li>
+                        <li class="nav-item me-lg-4">
+                            <a class="nav-link" href="#">Log In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
    
    <main class="container">
          <ul class="d-flex justify-content-end mb-0 py-5">
