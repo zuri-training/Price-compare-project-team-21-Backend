@@ -1,5 +1,8 @@
 @import url('http://fonts.cdnfonts.com/css/sf-pro-display');
 
+html{
+  scroll-behavior: smooth;
+}
 
 *{
   padding: 0;
@@ -7,6 +10,11 @@
   box-sizing: border-box;
   font-family: "sf pro display" !important;
 }
+
+.user-info{
+  color: #454545;
+}
+
 
 .fs-6{
  font-size: 27.6px !important;
@@ -36,6 +44,10 @@
 .links{
   gap: 20px;
 }
+
+/* .links a{
+  white-space: nowrap !important;
+} */
 
 @media(max-width: 600px){
   .container{

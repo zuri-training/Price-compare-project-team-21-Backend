@@ -8,6 +8,15 @@
   font-family: "sf pro display" !important;
 }
 
+.new-wishlist{
+  margin-top: 300px;
+  margin-bottom: 10px;
+}
+
+.category p, .wish-list p, .new-wishlist p{
+  color: #8C8C8C;
+}
+
 .fs-3{
  font-size: 24px !important;
 }
@@ -39,4 +48,49 @@
 
 .mx-auto{
  width: 650px !important;
+}
+
+@media(max-width: 600px){
+  .mx-auto{
+    width: 100% !important;
+    font-size: 7px;
+  }
+
+  .mx-auto label{
+    margin-right: 10px !important;
+  }
+
+  .category p{
+    font-size: 16px !important;
+  }
+
+  .gender, .join{
+    font-size: 8px !important;
+    padding: 5px !important;
+  }
+  
+  .wish-list{
+    width: 100% !important;
+    padding-right: 21px !important;
+  }
+
+  .wish-list p{
+     font-size: 16px !important;
+  }
+
+  .wish-list button{
+    margin-right: 0 !important;
+    font-size: 16px !important;
+    white-space: nowrap;
+  }
+
+  .new-wishlist{
+    margin-top: 90px !important;
+  }
+
+   .new-wishlist p{
+    font-size: 14px !important;
+    margin-bottom: 150px !important;
+   
+  } 
 }
