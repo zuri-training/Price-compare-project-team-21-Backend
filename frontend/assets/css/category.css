@@ -60,3 +60,7 @@
     .footer a{
         padding: 0.5em;
     } */
+
+    .moreText{
+        display: none;
+    }
