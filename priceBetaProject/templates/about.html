@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+{% block content %}
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ {% block title %}<title>About</title>{% endblock title %}
+ <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+   <header class="position-sticky top-0" style="z-index: 55;">
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="index">Price<span style="color: #F28202;">Beta</span></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                  aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarText">
+                  <form action="" class="search-form me-lg-4 d-flex">
+                      <input type="text" class="form-control" placeholder="Search products..." aria-label="search"
+                          aria-describedby="button-search">
+                      <button class="btn text-white px-4" style="font-size: 1.2rem;" type="submit"
+                          id="button-search">Search</button>
+                  </form>
+
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item me-lg-4">
+                          <a class="nav-link" href="#">All Categories</a>
+                      </li>
+                      <li class="nav-item me-lg-4">
+                          <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+
+  </header>
+ 
+ <main class="container">
+       <ul class="d-flex justify-content-end mb-0 py-5">
+            <li class="list-unstyled"><a href="{% url 'index' %}" class="text-decoration-none me-3 text-dark fw-bolder fs-7">home</a></li>
+           <li class="list-unstyled"><a href="{% url 'about' %}" class="text-decoration-none text-dark border-bottom border-dark fw-bolder fs-7">about</a></li>
+        </ul>
+   
+    <section>
+            <div class="header">
+                 <h2 class="display-5">About Us</h2>
+            </div>
+            <div class="contant">
+                <p class="fs-6 mb-4">PriceBeta is a free and easy to use platform that offers an unbiased service for users to compare price of products and shipping options of multiple merchants/retailers and in the process pressenting the users with price offers that best meets their interest. Sellers can promote new products by sending emails to the subscribers about it.</p>
+                <p class="fs-6 mb-4">PriceBeta do not sell any products. The information we collect is always up to date and accurate.</p>
+                <p class="fs-6 mb-4">Use our  Contact Us page for Questions or General Information.</p>
+            </div>
+      </section>
+ </main>
+ <footer>
+
+ </footer>
+ <script src="{% static 'js/about.js' %}"></script>
+</body>
+</html>
+{% endblock content%}
