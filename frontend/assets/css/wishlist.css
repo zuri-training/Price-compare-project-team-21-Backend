@@ -1,0 +1,42 @@
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "sf pro display" !important;
+}
+
+.fs-3{
+ font-size: 24px !important;
+}
+
+.fs-4{
+ font-size: 23px !important;
+}
+
+.fs-7{
+ font-size: 18px !important;
+}
+
+.bg-primary{
+ background: #0088CC !important;
+
+}
+
+.border-primary{
+ border-color: #0088CC !important;
+}
+
+.text-primary{
+ color: #0088CC !important;
+}
+
+.placeholder::placeholder{
+ color: #fff;
+}
+
+.mx-auto{
+ width: 650px !important;
+}
