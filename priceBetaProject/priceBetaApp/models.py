@@ -62,15 +62,26 @@ class Product(models.Model):
     category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)
     image_url = models.CharField(max_length = 250, null=True)
     image = models.ImageField(upload_to='product_images', default='null')
-    purchase_link = models.CharField(max_length = 250, null=True)
     brand = models.CharField(max_length = 100)
-    store = models.ForeignKey(Store, related_name='product', on_delete=models.CASCADE, default=None, blank=True, null=True)
-    price = models.DecimalField(max_digits=100, decimal_places=2)
+    store1 = models.ForeignKey(Store, related_name='store1-product+', on_delete=models.CASCADE, default=None, blank=True, null=True)
+    store1_price = models.DecimalField(max_digits=100, decimal_places=2)
+    store1_url = models.CharField(max_length = 250, null=True)
+    store2 = models.ForeignKey(Store, related_name='store2-product+', on_delete=models.CASCADE, default=None, blank=True, null=True)
+    store2_price = models.DecimalField(max_digits=100, decimal_places=2)
+    store2_url = models.CharField(max_length = 250, null=True)
+    store3 = models.ForeignKey(Store, related_name='store3-product+', on_delete=models.CASCADE, default=None, blank=True, null=True)
+    store3_price = models.DecimalField(max_digits=100, decimal_places=2)
+    store3_url = models.CharField(max_length = 250, null=True)
+    best_price = models.DecimalField(max_digits=100, decimal_places=2)
     rating = models.IntegerField()
     created_date = models.DateTimeField(auto_now_add=True)
     modified_at =models.DateTimeField(auto_now=True)
     slug = models.SlugField(max_length=255, unique=True, default='slug')
     in_stock = models.BooleanField(default=True)
+
+    
+        
+        
 
     class Meta:
         verbose_name_plural = 'products'
@@ -81,7 +92,11 @@ class Product(models.Model):
 
 class Wishlist(models.Model):
     wishlist_name = models.CharField(max_length=255, db_index=True)
+# <<<<<<< Updated upstream
     user = models.ForeignKey(CustomUser, related_name='wishlist', on_delete=models.CASCADE)
+# =======
+    # user = models.ForeignKey(User, related_name='wishlist', on_delete=models.CASCADE)
+# >>>>>>> Stashed changes
     item = models.ForeignKey(Product, related_name='wishlist', on_delete=models.CASCADE)
     slug = models.SlugField(max_length=255, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)

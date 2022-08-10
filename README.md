@@ -107,15 +107,15 @@ Project is: _in progress_
 
 2. Navigate to the terminal (pointing to your project folder/directory), Clone and then open it up on your prefered code editor
 ```bash 
-git clone https://github.com/<your github username>/Price-compare-project-team-21-Backend.git
+git clone https://github.com/<your github username>/Team_21-Price-Compare.git
 ```
 
 3.  Open terminal and set upstream branch:  
 ```bash 
-git remote add upstream https://github.com/zuri-training/Price-compare-project-team-21-Backend.git
+git remote add upstream https://github.com/zuri-training/Team_21-Price-Compare.git
 ```
 
-4.  Pull upstream to get the latest update from the original repo (https://github.com/zuri-training/Price-compare-project-team-21-Backend.git)
+4.  Pull upstream to get the latest update from the original repo (https://github.com/zuri-training/Team_21-Price-Compare.git)
 ```bash
 git pull upstream main
 ```
