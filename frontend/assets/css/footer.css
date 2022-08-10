@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+                
+:root {
+  --blue: #006da3;
+  --bluehover: #007ab8;
+  --blueactive: #0088cc;
+  --bluedark: #008899;
+  --gold: #f28202;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+  color: white;
 }
 
 footer {
@@ -10,9 +26,24 @@ footer {
     background-color: var(--blueactive);
   }
 
+  h3 {
+    font-weight: 600;
+  }
+
+  h3, h4 {
+    padding: 10px;
+}
+
   .footer-section1 {
       display: flex;
       justify-content: space-evenly;
+      padding-top: 80px;
+      padding-bottom: 60px;
+  }
+
+  .footer-section1 > .top-searches > ul > li > a, .footer-section1 > .top-brand > ul > li > a, .footer-section1 > .top-stores > ul > li > a{
+    text-decoration: none;
+    color: white;
   }
   
    .socials > .first-row i, .socials > .second-row  i {
@@ -70,7 +101,7 @@ footer {
   
   .copyright {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
   
@@ -78,7 +109,7 @@ footer {
     color: #e77f2a;
     font-size: 1.8rem;
     padding: 5px;
-    margin-left: 62%;
+    margin-left: 50%;
   }
   
   .copyright > h3 {
@@ -91,7 +122,7 @@ footer {
     border-left: 1.5px solid rgb(94, 94, 94);
     position: absolute;
     margin-left: -5px;
-    left: 10%;
+    left: 13.1%;
     height: 25px;
   }
   
@@ -119,6 +150,9 @@ footer {
     
         .footer-section1 {
             flex-direction: column;
+            padding-top: 20px;
+            padding-bottom: 20px;
+      
         }
     
         .foot-nav {
