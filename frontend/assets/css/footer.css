@@ -14,6 +14,7 @@
   --bluedark: #008899;
   --gold: #f28202;
 }
+
  body{
   color: white;
  }
@@ -42,7 +43,7 @@ h3, h4 {
   .footer-section1 {
       display: flex;
       justify-content: space-evenly;
-      padding-top: 80px;
+      padding-top: 60px;
       padding-bottom: 60px;
   }
 
