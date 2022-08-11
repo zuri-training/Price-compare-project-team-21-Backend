@@ -1,0 +1,509 @@
+{% load static %}
+<!DOCTYPE html>
+{% block content %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>Review</title>{% endblock %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Font Awesome css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="{% static 'css/privacy.css' %}">
+    <link rel="stylesheet" href="{% static 'css/none-auth-navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    <style>
+        @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+        form.reviewForm {
+            margin: auto;
+        }
+
+        #reviewBtn {
+            display: inline-flex;
+            border: solid #fff;
+            padding: 5px 10px;
+            border-radius: 7px;
+            background-color: rgb(0, 136, 204);
+            color: white;
+        }
+
+        header {
+    background-color: #0088cc;
+    padding: 20px 0;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 22px;
+        }
+
+        header .logo {
+            width: 15%;
+        }
+
+        .logo img {
+            width: 100%;
+        }
+
+        .user-infos {
+            display: flex;
+            align-items: center;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+        }
+
+        .location {
+            padding-right: 20px;
+        }
+
+        .display-info {
+            display: flex;
+            align-items: center;
+            padding-right: 40px;
+            margin-right: 18px;
+            /* border-right: 2px solid #ffffff; */
+            position: relative;
+        }
+
+        .info {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .chev-up {
+            font-size: 23px;
+            transition: ease-out 200ms;
+        }
+
+        .info:hover .options {
+            display: block;
+        }
+
+        .info:hover .chev-up {
+            transform: rotate(180deg);
+        }
+
+        .options {
+            position: absolute;
+            top: 41px;
+            right: 0px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px grey;
+            display: none; 
+        }
+
+        .options a {
+            text-decoration: none;
+            line-height: 35px;
+            font-size: 19px;
+        }
+
+        .profile,
+        .subscribe {
+            color: #0088cc;
+        }
+
+        .reviews {
+            color: #f28202;
+        }
+
+        .log-out {
+            color: #840000;
+        }
+
+        .display-info p {
+            font-size: 23px;
+        }
+
+        .display-info img {
+            margin-right: 14px;
+        }
+
+        .location i {
+            font-size: 23px;
+        }
+
+        .location img {
+            margin-right: 21px;
+        }
+
+        .form {
+            width: 45%;
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-bar input {
+            padding: 10px 22px;
+            width: 100%;
+            background-color: #ffffff;
+            border: none;
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            bottom: 6px;
+            padding: 0 20px;
+            top: 6px;
+            border: none;
+            color: #ffffff;
+            background-color: #0088cc;
+        }
+
+
+
+        @media (max-width: 769px) {
+            .display-info p {
+                font-size: 16px;
+            }
+
+            .logo h2 {
+                font-size: 32px;
+            }
+
+            .display-info {
+                display: flex;
+                align-items: center;
+                flex-direction: row !important;
+                justify-content: center;
+                padding-right: 2px;
+                margin-right: 2px;
+
+            }
+
+            .display-info img {
+                margin-right: 6px;
+                width: 20px;
+            }
+
+            .nav-bar {
+                margin: 0 !important;
+            }
+        }
+
+        @media (max-width: 500px) {
+            header {
+                margin-top: 37px;
+                background-color: #0088cc;
+                padding: 0;
+            }
+
+            .nav-bar {
+                margin: 0 !important;
+            }
+            .logo h2 {
+                display: none;
+            }
+
+            .logo h3 {
+                display: block;
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+
+            .location {
+                padding: 0 4px;
+                display: flex;
+            }
+
+            .location img {
+                margin-right: 6px;
+                width: 14px;
+            }
+
+            .chev-up {
+                margin-left: 4px;
+                font-size: 16px;
+            }
+
+            .display-info {
+                display: flex;
+                align-items: center;
+                flex-direction: row !important;
+                justify-content: center;
+                padding-right: 2px;
+                margin-right: 2px;
+                border-right: none;
+            }
+
+            .display-info p {
+                font-size: 9px;
+            }
+            /* .location i {
+                font-size: 9px;
+            } */
+
+            .display-info img {
+                margin-right: 6px;
+                width: 20px;
+            }
+
+            .user-infos {
+                display: flex;
+                flex-direction: row !important;
+            }
+
+            .search-bar input {
+                padding: 5px 12px;
+                width: 100%;
+                background-color: #ffffff;
+                border: none;
+            }
+
+            .search-bar input::placeholder {
+                font-size: 10px;
+            }
+
+            .search-bar button {
+                position: absolute;
+                right: 5px;
+                bottom: 6px;
+                padding: 0 10px;
+                font-size: 10px;
+                top: 6px;
+                border: none;
+                color: #ffffff;
+                background-color: #0088cc;
+                border-radius: 5px;
+            }
+            .mid{
+            margin-right: 0 !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="position-sticky top-0" style="z-index: 55;">
+        <nav class="nav-bar">
+             <div class="logo">
+                   <img src="{% static 'images/PriceBeta(1).png' %}" alt="">
+             </div>
+             <div class="form">
+                   <form class="search-bar">{% csrf_token %}
+                     <input type="text" name="search" id="search" placeholder="Search Product">
+                     <button type="submit">Search</button>
+                   </form>
+             </div>
+             
+             <div class="user-infos">
+                    <div class="display-info">
+                         <div class="info" id="info">
+                              <img src="{% static 'images/user-dp.png' %}" alt="user-dp">
+                              <p style="margin-bottom: 0; margin-right:10px" class="mid">Kesha Midrick </p>
+                              <div class="chev-up" id="chev">
+                                  <i class="bi bi-chevron-up"></i>
+                              </div>
+                              <div class="options" id="option">
+                                   <a class="profile" href="{% url 'user_profile' %}">My Profile</a> <br>
+                                   <a class="subscribe"href="#">Newsletter Subscription</a><br>
+                                   <a class="reviews" href="#">My reviews</a> <br>
+                                   <a class="log-out" href="#">Log out</a>
+                              </div>
+                         </div>
+                         
+                         
+                    </div>
+                      
+                   <!-- <div class="location">
+                       <img src="./assets/images/nigeria.png" alt="nigeria">
+                       <i class="bi bi-chevron-down"></i>
+                   </div> -->
+             </div>
+             
+             
+        </nav>
+    </header>
+    <main>
+        <div class="mt-3">
+            <div class="category border-bottom ps-3">
+                <p class="d-flex align-items-center fs-5">Category <i class="bi bi-chevron-down ms-2 text-primary"></i>
+                </p>
+            </div>
+            <div class="wish-list border-bottom ps-3 d-flex py-5 me-5 pe-5 align-items-center">
+                <form class="reviewForm" action="">
+
+                    <textarea name="review" id="review" cols="70" rows="10" required></textarea>
+                    <button id="reviewBtn" type="submit"><span class="material-icons">add</span> Add Review</button>
+                </form>
+            </div>
+            <div class="new-wishlist text-center py-2 border-bottom">
+                <!-- <p class="mb-0 pt-3 pb-2 fs-5">You have no wish lists. Would you like to <a href="#"
+                        class="text-primary text-decoration-none">create one</a> ?</p> -->
+
+                <div class="mx-auto">
+                    <form action="" class="bg-primary p-2 text-light d-flex justify-content-center align-items-center">{% csrf_token %}
+                        <label class="me-3" for="newsletter">subscribe to our newsletter for best deals</label>
+                        <select name="gender" id="gender" class="border-primary gender text-center p-2 fs-7 bg-light">
+                            <option selected>Male</option>
+                            <option>Female</option>
+                            <option>Others</option>
+                        </select>
+                        <input class="placeholder p-2 border-0 bg-primary text-light" type="email" name="newsletter"
+                            id="news" placeholder="Your Email">
+                        <button type="submit" class="py-2 px-3 border-0 fs-7 join bg-light">Join</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <!-- <div class="footer-sections"> -->
+        <div class="footer-section1">
+
+            <div class="social-icons">
+                <h3 style="margin-bottom: 3px;"><i>Price<span style="color: var(--gold)">Beta</span></i></h3>
+
+                <div class="socials">
+                    <div class="first-row">
+                        <a href="#"><i class="fa-regular fa-envelope" style="color: black;"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div class="second-row" style="padding-top: 4%;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-play"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="top-searches">
+                <h4>Top Searches</h4>
+                <ul>
+                    <li>
+                        <a href="#">Iphone 13 pro max</a>
+                    </li>
+                    <li>
+                        <a href="#">Iphone Xr</a>
+                    </li>
+                    <li>
+                        <a href="#">Galaxy S22</a>
+                    </li>
+                    <li>
+                        <a href="#">Galaxy A53</a>
+                    </li>
+                    <li>
+                        <a href="#">Google pixel 6 pro</a>
+                    </li>
+                    <li>
+                        <a href="#">Macbook</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="top-brand">
+                <h4>Top Brands</h4>
+                <ul>
+                    <li>
+                        <a href="#">Samsung</a>
+                    </li>
+                    <li>
+                        <a href="#">Apple</a>
+                    </li>
+                    <li>
+                        <a href="#">Google</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="top-stores">
+                <h4>Top Stores</h4>
+                <ul>
+                    <li>
+                        <a href="#">Jumia</a>
+                    </li>
+                    <li>
+                        <a href="#">Konga</a>
+                    </li>
+                    <li>
+                        <a href="#">Jiji</a>
+                    </li>
+                </ul>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="footer-section2">
+            <div class="copyright">
+                <i class="fas fa-copyright"></i>
+                <span style="color: #000;">2022</span>
+                <div class="vl"></div>
+                <h3><i><span style="color: var(--blueactive);">Price</span><span
+                            style="color: var(--gold);">Beta</span></i></h3>
+            </div>
+
+            <div class="footer-nav">
+
+                <ul class="foot-nav">
+                    <li>
+                        <a href="{% url'index' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Category</a>
+                    </li>
+                    <li>
+                        <a href="{% url'about' %}">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Documentation</a>
+                    </li>
+                    <li>
+                        <a href="{% url'signup' %}">Register</a>
+                    </li>
+                    <li>
+                        <a href="{% url'term' %}">Terms</a>
+                    </li>
+                    <li>
+                        <a href="{% url'privacy' %}">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#">Subscribe</a>
+                    </li>
+                    <li>
+                        <a href="#">Support</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        </div>
+        <div class="show">
+            <i class="fas fa-copyright"></i>
+            <span> 2022</span>
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -22,102 +22,7 @@
     <link rel="stylesheet" href="{% static 'css/category.css' %}">
     <link rel="stylesheet" href="static 'css/none-auth-navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-        @import url('http://fonts.cdnfonts.com/css/sf-pro-display');
 
-        body {
-            font-size: 16px;
-            font-family: 'SF Pro Display', 'Poppins', sans-serif
-        }
-
-        .filter .form-check-input {
-            box-shadow: unset;
-            border: 2px solid #000000;
-        }
-
-        .filter .form-check {
-            margin-bottom: 0.6rem;
-        }
-
-        .filter {
-            /* z-index: -1; */
-            font-weight: 500;
-            border-right: 2px solid #F0F0F0 !important;
-        }
-
-        .accordion-item:first-of-type,
-        .accordion-item:last-of-type {
-            border-radius: unset !important;
-        }
-
-        .accordion-button {
-            font-size: 1.18rem;
-        }
-
-        .search-cont {
-            width: 90%;
-        }
-
-        .filter .search-text {
-            font-size: 1.18rem;
-        }
-
-        .accordion-header,
-        .main-header,
-        .accordion-button,
-        .filter .input-group .btn {
-            background-color: #0088CC !important;
-            color: #FFFFFF !important;
-        }
-
-        .filter .input-group .btn {
-            font-weight: 500;
-        }
-
-        .form-control:focus,
-        .filter .input-group .btn {
-            box-shadow: unset;
-            border-color: #0088CC !important;
-        }
-
-        .filter .price-num {
-            padding: 4px;
-            /* 8% 4px 4px; */
-            /* background: transparent url('./assets/icons/caret.svg') no-repeat 96% center; */
-            width: 48%;
-        }
-
-        .form-control {
-            margin-bottom: 0 !important;
-            color: #141414 !important;
-            font-weight: 700 !important;
-            border: 2.5px solid #0088CC;
-        }
-
-        .form-control::placeholder {
-            color: #000000;
-        }
-
-        .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-        }
-
-        .accordion-item {
-            border: 1px solid #8C8C8C !important;
-        }
-
-        .products::-webkit-scrollbar,
-        .filter::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .products::-webkit-scrollbar-thumb,
-        .filter::-webkit-scrollbar-thumb {
-            background-color: #262626;
-            border-radius: 10px;
-        }
-    </style>
 </head>
 
 <body class="">
@@ -190,7 +95,7 @@
                     <span class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#filter"
                         aria-controls="filter" aria-expanded="false" aria-label="Toggle navigation"
                         style="cursor: pointer; color: #BFBFBF;">
-                        <img src="./assets/icons/arrow-right.png" alt="">
+                        <img src="{% static 'icons/arrow-right.png' %}" alt="">
                         Filter</span>
                 </div>
 
@@ -699,7 +604,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -819,7 +724,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -879,7 +784,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -939,7 +844,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -999,7 +904,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1059,7 +964,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1119,7 +1024,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1179,7 +1084,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1377,3 +1282,4 @@
 </body>
 
 </html>
+{% endblock %}

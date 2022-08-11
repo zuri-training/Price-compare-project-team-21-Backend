@@ -26,6 +26,15 @@ def privacy(request):
 def term(request):
     return render(request,'term.html')
 
+def wishlist(request):
+    return render(request,'wishlist.html')
+
+def review(request):
+    return render(request,'review.html')
+
+def user_profile(request):
+    return render(request,'user_profile.html')
+
 def accessories_category(request):
     return render(request,'accessories_category.html')
 

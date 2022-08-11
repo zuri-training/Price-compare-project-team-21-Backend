@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-{% block content %}
+{% block content%}
 <html lang="en">
 
 <head>
@@ -11,8 +11,9 @@
     <!-- bootsrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
-    <link rel="stylesheet" href="./assets/css/none-auth-navbar.css">
+    <link rel="stylesheet" href="{%  static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/none-auth-navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
         @import url('http://fonts.cdnfonts.com/css/sf-pro-display');
@@ -33,7 +34,7 @@
             border-radius: unset;
         }
 
-        .contact-cont .form-control:focus{
+        .contact-cont .form-control:focus {
             border: 1px solid #323232;
         }
 
@@ -52,7 +53,7 @@
     <header class="position-sticky top-0" style="z-index: 55;">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index">Price<span style="color: #F28202;">Beta</span></a>
+                <a class="navbar-brand" href="{% url 'index' %}">Price<span style="color: #F28202;">Beta</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -98,7 +99,8 @@
         <div class="row">
 
             <section class="col-lg-8 mx-auto">
-                <form action="">
+                <form action="">{% csrf_token%}
+                    {{ form.as_p }}
                     <div class="mb-4">
                         <!-- <label for="name" class="form-label">Full Name</label> -->
                         <input type="text" class="form-control" id="name" placeholder="Full Name">
@@ -123,15 +125,156 @@
 
                 </form>
 
-                <p>Our current response time is 1 hour.</p>
-                <p>Email Support: info@pricebeta.com</p>
+                <p class="text-dark">Our current response time is 1 hour.</p>
+                <p class="text-dark">Email Support: info@pricebeta.com</p>
             </section>
 
         </div>
 
     </main>
 
+    <footer>
 
+
+
+
+        <!-- <div class="footer-sections"> -->
+        <div class="footer-section1">
+
+            <div class="social-icons">
+                <h3 style="margin-bottom: 3px;"><i>Price<span style="color: var(--gold)">Beta</span></i></h3>
+
+                <div class="socials">
+                    <div class="first-row">
+                        <a href="#"><i class="fa-regular fa-envelope" style="color: black;"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div class="second-row" style="padding-top: 4%;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-play"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="top-searches">
+                <h4>Top Searches</h4>
+                <ul>
+                    <li>
+                        <a href="#">Iphone 13 pro max</a>
+                    </li>
+                    <li>
+                        <a href="#">Iphone Xr</a>
+                    </li>
+                    <li>
+                        <a href="#">Galaxy S22</a>
+                    </li>
+                    <li>
+                        <a href="#">Galaxy A53</a>
+                    </li>
+                    <li>
+                        <a href="#">Google pixel 6 pro</a>
+                    </li>
+                    <li>
+                        <a href="#">Macbook</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="top-brand">
+                <h4>Top Brands</h4>
+                <ul>
+                    <li>
+                        <a href="#">Samsung</a>
+                    </li>
+                    <li>
+                        <a href="#">Apple</a>
+                    </li>
+                    <li>
+                        <a href="#">Google</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="top-stores">
+                <h4>Top Stores</h4>
+                <ul>
+                    <li>
+                        <a href="#">Jumia</a>
+                    </li>
+                    <li>
+                        <a href="#">Konga</a>
+                    </li>
+                    <li>
+                        <a href="#">Jiji</a>
+                    </li>
+                </ul>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="footer-section2">
+            <div class="copyright">
+                <i class="fas fa-copyright"></i>
+                <span style="color: #000;">2022</span>
+                <div class="vl"></div>
+                <h3><i><span style="color: var(--blueactive);">Price</span><span
+                            style="color: var(--gold);">Beta</span></i></h3>
+            </div>
+
+            <div class="footer-nav">
+
+                <ul class="foot-nav">
+                    <li>
+                        <a href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Category</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Documentation</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'signup' %}">Register</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'term' %}">Terms</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'privacy' %}"Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#">Subscribe</a>
+                    </li>
+                    <li>
+                        <a href="#">Support</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        </div>
+        <div class="show">
+            <i class="fas fa-copyright"></i>
+            <span> 2022</span>
+        </div>
+
+
+
+        <!-- FOOTER SECTION ENDS HERE -->
+
+
+    </footer>
 
     <!-- bootsrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -140,4 +283,4 @@
 </body>
 
 </html>
-{% endblock content %}
+{% endblock %}
