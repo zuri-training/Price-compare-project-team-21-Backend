@@ -1,6 +1,6 @@
 header {
     background-color: #0088cc;
-    padding: 20px 0;
+    padding: 10px 0;
     color: #ffffff !important;
 }
 .nav-bar {
@@ -10,7 +10,8 @@ header {
     margin: 0 22px;
 }
 
-.logo h2 {
+.logo a {
+    text-decoration: none;
     font-size: 48px;
     font-style: italic;
 }

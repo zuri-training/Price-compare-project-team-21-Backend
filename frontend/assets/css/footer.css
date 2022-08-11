@@ -18,7 +18,7 @@
   color: white;
  }
 
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -74,7 +74,8 @@ h3, h4 {
       background-color: white;
       display: flex;
       justify-content: space-between;
-      padding-right: 107px;
+      padding-right: 4rem;
+      padding-left: 4rem;
   }
   
   .foot-nav {
@@ -115,7 +116,7 @@ h3, h4 {
     color: #e77f2a;
     font-size: 1.8rem;
     padding: 5px;
-    margin-left: 50%;
+    /* margin-left: 50%; */
   }
   
   .copyright > h3 {
@@ -161,20 +162,38 @@ h3, h4 {
       
         }
     
-        .foot-nav {
+        /* .foot-nav {
             flex-direction: column;
-        }
+        } */
     
-        .foot-nav > li {
+        /* .foot-nav > li {
             padding: 10px 0.5px;
+        } */
+
+        .foot-nav > li a{
+          font-weight: normal;
+            font-size: 1rem;
         }
+        
+        .foot-nav {
+          flex-direction: row;
+          /* justify-content: center; */
+          /* align-items: center; */
+          /* flex-wrap: wrap !important; */
+        }
+        .foot-nav > li {
+            padding: .3rem;
+        }
+
     
         .footer-section2 {
           background-color: white;
           display: flex;
-          justify-content: start;
-          flex-direction: column;
-          padding-right: 5%;
+
+          align-items: center;
+          /*flex-direction: column; */
+          padding-right: 5px; 
+          padding-left: 5px;
         }
     
         .footer-section2 > h3 {
@@ -203,3 +222,52 @@ h3, h4 {
             visibility: unset;
           }
    }
+
+   /* large mobile*/
+@media screen and (max-width: 767px) {
+
+  .foot-nav > li a{
+    font-weight: normal;
+      font-size: .7rem;
+  }
+
+  .copyright{
+    justify-content: center;
+  }
+  .copyright h3{
+    margin-right: 0;
+    text-align: center;
+  }
+  .foot-nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap !important;
+  }
+  .foot-nav > li {
+      padding: .2rem;
+  }
+}
+
+/* small mobile*/
+@media screen and (max-width: 576px) {
+  .foot-nav > li a{
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  footer .show{
+    padding: 10px;
+    justify-content: center;
+  }
+  .foot-nav{
+      padding-left: 0;
+  }
+  .foot-nav > li {
+    padding: .3rem;
+}
+  .footer-section2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
