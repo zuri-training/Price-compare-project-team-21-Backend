@@ -7,6 +7,11 @@
   font-family: "Sf Pro Display";
 }
 
+.container h4{
+  color: #323232;
+  padding: 0 !important;
+}
+
 .fs-7{
   font-size: 18px !important;
 }
