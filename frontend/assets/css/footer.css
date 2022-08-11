@@ -14,7 +14,9 @@
   --bluedark: #008899;
   --gold: #f28202;
 }
-
+ body{
+  color: white;
+ }
 
 * {
     box-sizing: border-box;
@@ -22,13 +24,10 @@
     padding: 0;
 }
 
-body {
-  color: white;
-}
 
 footer {
-  padding-top: 3px;
-  padding-bottom: 6px;
+  padding-top: 60px;
+  padding-bottom: 40px;
   background-color: var(--blueactive);
 }
 
@@ -133,19 +132,19 @@ h3, h4 {
     height: 25px;
   } */
   
-  .show {
+  footer .show {
     display: flex; 
     justify-content: flex-end; 
     padding-top: 28px;
     visibility: hidden;
   }
   
-  .show > i {
+  footer .show > i {
     padding-right: 8px; 
     font-size: 1.5rem;
   }
   
-  .show > span {
+  footer .show > span {
     color: white;
     padding-right: 5px;
   }
@@ -200,7 +199,7 @@ h3, h4 {
             padding-left: 3%
           }
     
-        .show {
+        footer .show {
             visibility: unset;
           }
    }

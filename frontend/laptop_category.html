@@ -1,13 +1,11 @@
-{% load static %}
 <!DOCTYPE html>
-{% block content %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}<title>Accessories Category</title>{% endblock %}
+    <title>Laptop Category</title>
     <!-- bootsrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -19,105 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
         integrity="sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{% static 'css/category.css' %}">
-    <link rel="stylesheet" href="static 'css/none-auth-navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-        @import url('http://fonts.cdnfonts.com/css/sf-pro-display');
-
-        body {
-            font-size: 16px;
-            font-family: 'SF Pro Display', 'Poppins', sans-serif
-        }
-
-        .filter .form-check-input {
-            box-shadow: unset;
-            border: 2px solid #000000;
-        }
-
-        .filter .form-check {
-            margin-bottom: 0.6rem;
-        }
-
-        .filter {
-            /* z-index: -1; */
-            font-weight: 500;
-            border-right: 2px solid #F0F0F0 !important;
-        }
-
-        .accordion-item:first-of-type,
-        .accordion-item:last-of-type {
-            border-radius: unset !important;
-        }
-
-        .accordion-button {
-            font-size: 1.18rem;
-        }
-
-        .search-cont {
-            width: 90%;
-        }
-
-        .filter .search-text {
-            font-size: 1.18rem;
-        }
-
-        .accordion-header,
-        .main-header,
-        .accordion-button,
-        .filter .input-group .btn {
-            background-color: #0088CC !important;
-            color: #FFFFFF !important;
-        }
-
-        .filter .input-group .btn {
-            font-weight: 500;
-        }
-
-        .form-control:focus,
-        .filter .input-group .btn {
-            box-shadow: unset;
-            border-color: #0088CC !important;
-        }
-
-        .filter .price-num {
-            padding: 4px;
-            /* 8% 4px 4px; */
-            /* background: transparent url('./assets/icons/caret.svg') no-repeat 96% center; */
-            width: 48%;
-        }
-
-        .form-control {
-            margin-bottom: 0 !important;
-            color: #141414 !important;
-            font-weight: 700 !important;
-            border: 2.5px solid #0088CC;
-        }
-
-        .form-control::placeholder {
-            color: #000000;
-        }
-
-        .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
-        }
-
-        .accordion-item {
-            border: 1px solid #8C8C8C !important;
-        }
-
-        .products::-webkit-scrollbar,
-        .filter::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .products::-webkit-scrollbar-thumb,
-        .filter::-webkit-scrollbar-thumb {
-            background-color: #262626;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/category.css">
+    <link rel="stylesheet" href="./assets/css/none-auth-navbar.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
 </head>
 
 <body class="">
@@ -145,7 +47,7 @@
                             <a class="nav-link" href="#">All Categories</a>
                         </li>
                         <li class="nav-item me-lg-4">
-                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                            <a class="nav-link" href="#">Log In</a>
                         </li>
                     </ul>
                 </div>
@@ -169,7 +71,7 @@
                 </div>
 
                 <div class="col-md-9 py-3 d-flex  justify-content-between align-items-center">
-                    <h5 class="cat-title mb-md-0 mb-4">Top Product in Accessories Category</h5>
+                    <h5 class="cat-title mb-md-0 mb-4">Top Product in Laptop Category</h5>
                     <div class="d-flex justify-content-between align-items-center">
                         <label for="sort" class="d-block w-25 form-label me-3">sort by:</label>
                         <select name="category" class="d-block w-75 form-control form-select" id="sort">
@@ -214,7 +116,7 @@
                                 </span>
                             </div>
                             <div class="">
-                                <img class="" src="{% static 'icons/arrow-down.png' %}" width="60%" alt="arrow-down_minor">
+                                <img class="" src="./assets/icons/arrow-down.png" width="60%" alt="arrow-down_minor">
                             </div>
 
                         </div>
@@ -653,7 +555,7 @@
                         <div class="col-12 bg-white pb-5" style="border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{% static 'images/china_great_wall.jpg' %}" alt="responsive webite"
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
                                         class="img-fluid p-6">
 
 
@@ -699,7 +601,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -713,7 +615,7 @@
                         <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{% static 'images/china_great_wall.jpg' %}" alt="responsive webite"
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
                                         class="img-fluid p-6">
 
 
@@ -773,7 +675,7 @@
                         <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{% static 'images/china_great_wall.jpg' %}" alt="responsive webite"
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
                                         class="img-fluid p-6">
 
 
@@ -819,7 +721,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -833,7 +735,7 @@
                         <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{% static 'images/china_great_wall.jpg' %}" alt="responsive webite"
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
                                         class="img-fluid p-6">
 
 
@@ -879,7 +781,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -893,7 +795,7 @@
                         <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{% static 'images/china_great_wall.jpg' %}" alt="responsive webite"
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
                                         class="img-fluid p-6">
 
 
@@ -939,7 +841,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -953,7 +855,7 @@
                         <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{% static 'images/china_great_wall.jpg' %}" alt="responsive webite"
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
                                         class="img-fluid p-6">
 
 
@@ -999,7 +901,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1013,7 +915,7 @@
                         <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{% static 'images/china_great_wall.jpg' %}" alt="responsive webite"
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
                                         class="img-fluid p-6">
 
 
@@ -1059,7 +961,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1073,7 +975,7 @@
                         <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{% static 'images/china_great_wall.jpg' %}" alt="responsive webite"
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
                                         class="img-fluid p-6">
 
 
@@ -1119,7 +1021,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1133,7 +1035,7 @@
                         <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <img src="{% static 'images/china_great_wall.jpg' %}" alt="responsive webite"
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
                                         class="img-fluid p-6">
 
 
@@ -1179,7 +1081,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="{% url 'wishlist' %}">Add to a wish list</a></p>
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1191,7 +1093,8 @@
                         </div>
                     </div>
 
-                    <div class="row text-center" style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important;">
+                    <div class="row text-center"
+                        style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important;">
                         <div class="col-12">
                             <div class="py-5 bg-white">
                                 <div class="row ">
@@ -1210,21 +1113,23 @@
 
                     <div class="row">
                         <div class="col-lg-10 mx-auto">
-                            <h4 class="px-0" style="font-weight: 600; font-size: 1.8rem;">Accessories in Nigeria</h4>
-                            <p style="line-height: 38.19px; font-size: 1rem;">                        
-                                PriceBeta has come up with a large stock of mobile and laptop accessories sourced from Jumia and
-                                Konga – ranging from brand new mobile accessories to PC accessories, Mac-Apple devices and
-                                different types of wearables. We are the best price compare platform in Nigeria for you to make
-                                informed decisions from . Our stock is upgraded on regular basis and we ensure you that after
-                                several price compares you will get the best range of products at prices that will best sooth
-                                you.
+                            <h4 class="px-0" style="font-weight: 600; font-size: 1.8rem;">Laptops in Nigeria</h4>
+                            <p style="line-height: 38.19px; font-size: 1rem;">                                
+                                Looking for the perfect mix of portability, specifications, and design? Then you’ve come
+                                to the right place. Find the answer to all your laptop prayers on PriceBeta.com’s
+                                collection of price compare laptops available online in various stores. It is important
+                                to consider certain factors such as the price, size, screen, portability, CPU, RAM,
+                                storage, connectivity, brand and sometimes price. Whether you need a computer for
+                                personal or business use, be rest assured that you would find just the ideal laptop or
+                                computer that specifically suits your needs. Discover new and used computers and laptops
+                                in Nigeria for sale. Enjoy the best price compare on laptops in Nigeria on PriceBeta.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-           
+
         </div>
     </main>
 
@@ -1326,25 +1231,25 @@
 
                 <ul class="foot-nav">
                     <li>
-                        <a href="{% url 'index' %}">Home</a>
+                        <a href="index.html">Home</a>
                     </li>
                     <li>
                         <a href="#">Category</a>
                     </li>
                     <li>
-                        <a href="{% url 'about' %}">About</a>
+                        <a href="./about.html">About</a>
                     </li>
                     <li>
                         <a href="./docs/">Documentation</a>
                     </li>
                     <li>
-                        <a href="{% url 'signup' %}">Register</a>
+                        <a href="#">Register</a>
                     </li>
                     <li>
-                        <a href="{% url 'term' %}">Terms</a>
+                        <a href="./term.html">Terms</a>
                     </li>
                     <li>
-                        <a href="{% url 'privacy' %}">Privacy</a>
+                        <a href="./privacy.html">Privacy</a>
                     </li>
                     <li>
                         <a href="#">Subscribe</a>
@@ -1373,7 +1278,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="{% static 'js/category.js' %}"></script>
+    <script src="./assets/js/category.js"></script>
 </body>
 
 </html>
