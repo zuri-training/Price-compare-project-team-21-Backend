@@ -29,10 +29,14 @@
             box-shadow: unset !important;
             margin-bottom: 0 !important;
             color: #323232 !important;
-            font-weight: 700 !important;
             border: 1px solid #323232;
             border-radius: unset;
         }
+
+        ::placeholder {
+            color: #7575759e !important;
+        }
+
 
         .contact-cont .form-control:focus {
             border: 1px solid #323232;
@@ -44,6 +48,16 @@
 
         .second-nav .nav-item a {
             color: #000000;
+        }
+
+        input.btn-outline-info {
+            color: #0088cc;
+            border-color: #0088cc;
+        }
+
+        input.btn-outline-info:hover {
+            color: #fff;
+            background-color: #0088cc;
         }
     </style>
 </head>
@@ -120,7 +134,7 @@
                     </div>
 
                     <div class="mb-4">
-                        <input type="submit" class="btn btn-outline-info" value="Submmit">
+                        <input type="submit" class="btn btn-outline-info" value="Submit">
                     </div>
 
                 </form>

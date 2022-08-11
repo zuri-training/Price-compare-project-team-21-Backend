@@ -694,8 +694,7 @@ footer {
 }
 
 .foot-nav > li > a:hover {
-  color: black;
-  font-size: 1.3rem;
+  color: rgb(71, 71, 71);
   transition: ease-in;
 }
 
