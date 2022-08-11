@@ -167,6 +167,27 @@
             background-color: #0088cc;
         }
 
+        .placeholder{
+          background-color: #0088cc !important;
+        }
+
+        .placeholder::placeholder{
+            color: #ffffff;
+        }
+
+        .mx-auto{
+          width: 650px !important;
+          position: relative;
+         }
+
+         .close-img{
+           position: absolute;
+           top: -16px;
+           right: -16px;
+           background-color: #fff;
+           border-radius: 50%;
+            cursor: pointer;
+         }
 
 
         @media (max-width: 769px) {
@@ -196,6 +217,8 @@
             .nav-bar {
                 margin: 0 !important;
             }
+
+            
         }
 
         @media (max-width: 500px) {
@@ -350,7 +373,7 @@
                         class="text-primary text-decoration-none">create one</a> ?</p> -->
 
                 <div class="mx-auto">
-                    <form action="" class="bg-primary p-2 text-light d-flex justify-content-center align-items-center">
+                    <form action="" class="p-2 text-light d-flex justify-content-center align-items-center" style=" background-color: #0088cc;">
                         <label class="me-3" for="newsletter">subscribe to our newsletter for best deals</label>
                         <select name="gender" id="gender" class="border-primary gender text-center p-2 fs-7 bg-light">
                             <option selected>Male</option>
@@ -361,6 +384,9 @@
                             id="news" placeholder="Your Email">
                         <button type="submit" class="py-2 px-3 border-0 fs-7 join bg-light">Join</button>
                     </form>
+                    <div class="close-img">
+                     <img src="./assets/images/close.png" alt="">
+                    </div>
                 </div>
             </div>
 
