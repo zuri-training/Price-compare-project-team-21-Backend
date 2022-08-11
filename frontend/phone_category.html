@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Category</title>
+    <!-- bootsrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome 6 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome 4 css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"
+        integrity="sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/category.css">
+    <link rel="stylesheet" href="./assets/css/none-auth-navbar.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        @import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+
+        body {
+            font-size: 16px;
+            font-family: 'SF Pro Display', 'Poppins', sans-serif
+        }
+
+        .filter .form-check-input {
+            box-shadow: unset;
+            border: 2px solid #000000;
+        }
+
+        .filter .form-check {
+            margin-bottom: 0.6rem;
+        }
+
+        .filter {
+            /* z-index: -1; */
+            font-weight: 500;
+            border-right: 2px solid #F0F0F0 !important;
+        }
+
+        .accordion-item:first-of-type,
+        .accordion-item:last-of-type {
+            border-radius: unset !important;
+        }
+
+        .accordion-button {
+            font-size: 1.18rem;
+        }
+
+        .search-cont {
+            width: 90%;
+        }
+
+        .filter .search-text {
+            font-size: 1.18rem;
+        }
+
+        .accordion-header,
+        .main-header,
+        .accordion-button,
+        .filter .input-group .btn {
+            background-color: #0088CC !important;
+            color: #FFFFFF !important;
+        }
+
+        .filter .input-group .btn {
+            font-weight: 500;
+        }
+
+        .form-control:focus,
+        .filter .input-group .btn {
+            box-shadow: unset;
+            border-color: #0088CC !important;
+        }
+
+        .filter .price-num {
+            padding: 4px;
+            /* 8% 4px 4px; */
+            /* background: transparent url('./assets/icons/caret.svg') no-repeat 96% center; */
+            width: 48%;
+        }
+
+        .form-control {
+            margin-bottom: 0 !important;
+            color: #141414 !important;
+            font-weight: 700 !important;
+            border: 2.5px solid #0088CC;
+        }
+
+        .form-control::placeholder {
+            color: #000000;
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FFFFFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+        }
+
+        .accordion-item {
+            border: 1px solid #8C8C8C !important;
+        }
+
+        .products::-webkit-scrollbar,
+        .filter::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .products::-webkit-scrollbar-thumb,
+        .filter::-webkit-scrollbar-thumb {
+            background-color: #262626;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="">
+
+    <header class="" style="z-index: 55;">
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">Price<span style="color: #F28202;">Beta</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <form action="" class="search-form me-lg-4 d-flex">
+                        <input type="text" class="form-control" placeholder="Search products..." aria-label="search"
+                            aria-describedby="button-search">
+                        <button class="btn text-white px-4" style="font-size: 1.2rem;" type="submit"
+                            id="button-search">Search</button>
+                    </form>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item me-lg-4">
+                            <a class="nav-link" href="#">All Categories</a>
+                        </li>
+                        <li class="nav-item me-lg-4">
+                            <a class="nav-link" href="#">Log In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="container-fluid second-nav w-100" style="z-index: 60;">
+            <div class="row bg-white d-none d-md-flex"
+                style="border-top: 2px solid #F0F0F0 !important; border-bottom: 2px solid #F0F0F0 !important;">
+                <div class="col-md-3 py-3 d-flex align-items-center justify-content-center"
+                    style="border-right: 2px solid #F0F0F0 !important;">
+                    <select name="category" class="form-control form-select" id="">
+                        <option value="" selected>Browse Category</option>
+                        <option value="phone">Phone</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+
+                <div class="col-md-9 py-3 d-flex  justify-content-between align-items-center">
+                    <h5 class="cat-title mb-md-0 mb-4">Top Product in Phone Category</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <label for="sort" class="d-block w-25 form-label me-3">sort by:</label>
+                        <select name="category" class="d-block w-75 form-control form-select" id="sort">
+                            <option value="" selected>Popularity</option>
+                            <option value="">Relevance</option>
+                            <option value="">Low price to high</option>
+                            <option value="">High price to low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 py-4 d-md-none d-block">
+                    <span class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#filter"
+                        aria-controls="filter" aria-expanded="false" aria-label="Toggle navigation"
+                        style="cursor: pointer; color: #BFBFBF;">
+                        <img src="./assets/icons/arrow-right.png" alt="">
+                        Filter</span>
+                </div>
+
+                <aside id="filter" class="collapse filter-collapse filter d-md-block col-md-3 bg-white"
+                    style="padding-top: 3rem; padding-bottom: 4rem;">
+                    <h4 class="main-header px-2 py-1 mb-5 text-white">
+                        Filters</h4>
+
+                    <form action="search-form" class="d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Iphone" aria-label="search"
+                                aria-describedby="button-search">
+                            <button class="btn text-white" style="font-size: 1.2rem;" type="submit"
+                                id="button-search">Search</button>
+                        </div>
+                        <div class="search-cont d-flex align-items-center mb-5 mx-auto">
+                            <div class="">
+                                <span class="search-text text-center">
+                                    Search for filters or apply some filters from below.
+                                </span>
+                            </div>
+                            <div class="">
+                                <img class="" src="./assets/icons/arrow-down.png" width="60%" alt="arrow-down_minor">
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <div class="accordion" id="accordionFlushExample">
+                        <form action="">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <a class="py-2 text-decoration-none accordion-button collapsed"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
+                                        aria-controls="collapseOne">
+                                        Price
+                                    </a>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+                                    <div class="accordion-body d-flex justify-content-between align-items-center">
+                                        <input type="number" placeholder="Min" min="1" class="form-control price-num"
+                                            name="min-price" id=""> <span class="mx-2"
+                                            style="font-size: 1.2rem; font-weight: 700;">to</span>
+                                        <input type="number" placeholder="Max" min="1" class="form-control price-num"
+                                            name="max-pice" id="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <a class="py-2 text-decoration-none accordion-button collapsed"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                        Brands
+                                    </a>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                                    <div class="accordion-body">
+                                        <input type="search" name="brands" class="mb-3 form-control"
+                                            placeholder="Search Brands" id="">
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="samsung">
+                                            <label class="form-check-label" for="samsung">
+                                                Samsung
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="apple">
+                                            <label class="form-check-label" for="apple">
+                                                Apple
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="google-Pixel">
+                                            <label class="form-check-label" for="google-Pixel">
+                                                Google Pixel
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="oppo">
+                                            <label class="form-check-label" for="oppo">
+                                                Oppo
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="nfinix">
+                                            <label class="form-check-label" for="nfinix">
+                                                Infinix
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="tecno">
+                                            <label class="form-check-label" for="tecno">
+                                                Tecno
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <a class="py-2 text-decoration-none accordion-button collapsed"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        Stores
+                                    </a>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="amazon-st">
+                                            <label class="form-check-label" for="amazon-st">
+                                                Amazon
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="jumia-st">
+                                            <label class="form-check-label" for="jumia-st">
+                                                Jumia
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="konga-st">
+                                            <label class="form-check-label" for="konga-st">
+                                                Konga
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="samsung-st">
+                                            <label class="form-check-label" for="samsung-st">
+                                                Samsung
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="infini-st">
+                                            <label class="form-check-label" for="infini-st">
+                                                Infinix
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="tecno-st">
+                                            <label class="form-check-label" for="tecno-st">
+                                                tecno
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <a class="py-2 text-decoration-none accordion-button collapsed"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        Screen Size
+                                    </a>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFour">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="lt-4">
+                                            <label class="form-check-label" for="lt-4">
+                                                4 inch & below
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="lte-4.7">
+                                            <label class="form-check-label" for="lte-4.7">
+                                                4inch - 4.7 inch
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="lte-5">
+                                            <label class="form-check-label" for="lte-5">
+                                                4.7 inch - 5 inch
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="lte-5.5">
+                                            <label class="form-check-label" for="lte-5.5">
+                                                5 inch - 5.5 inch
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="lte-6">
+                                            <label class="form-check-label" for="lte-6">
+                                                5.5 inch - 6 inch
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="lte-6.5">
+                                            <label class="form-check-label" for="lte-6.5">
+                                                6 inch - 6.5 inch
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-6.5">
+                                            <label class="form-check-label" for="gte-6.5">
+                                                6.5 inch & Above
+                                            </label>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <a class="py-2 text-decoration-none accordion-button collapsed"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        Screen
+                                    </a>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="headingFive">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="hppi">
+                                            <label class="form-check-label" for="hppi">
+                                                High PPI Display
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="4k">
+                                            <label class="form-check-label" for="4k">
+                                                4096 X 2160 (4k)
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="2k">
+                                            <label class="form-check-label" for="2k">
+                                                4028 X 1536 (2k)
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="fhd">
+                                            <label class="form-check-label" for="fhd">
+                                                1920 X 1080 (Full HD)
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="by720">
+                                            <label class="form-check-label" for="by720">
+                                                1280 X 720
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSix">
+                                    <a class="py-2 text-decoration-none accordion-button collapsed"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false"
+                                        aria-controls="collapseSix">
+                                        Camera
+                                    </a>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="rc">
+                                            <label class="form-check-label" for="rc">
+                                                Rear Camera
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="dc">
+                                            <label class="form-check-label" for="dc">
+                                                Dual Camera
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="tc">
+                                            <label class="form-check-label" for="tc">
+                                                Tripple Camera
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="qc">
+                                            <label class="form-check-label" for="qc">
+                                                Quad Camera
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="nrc">
+                                            <label class="form-check-label" for="nrc">
+                                                No Rear Camera
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSeven">
+                                    <a class="py-2 text-decoration-none accordion-button collapsed"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false"
+                                        aria-controls="collapseSeven">
+                                        Ram
+                                    </a>
+                                </h2>
+                                <div id="collapseSeven" class="accordion-collapse collapse"
+                                    aria-labelledby="headingSeven">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-2gb">
+                                            <label class="form-check-label" for="gte-2gb">
+                                                2GB and Above
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-4gb">
+                                            <label class="form-check-label" for="gte-4gb">
+                                                4GB and Above
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-6gb">
+                                            <label class="form-check-label" for="gte-6gb">
+                                                6GB and Above
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-8gb">
+                                            <label class="form-check-label" for="gte-8gb">
+                                                8GB and Above
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-12gb">
+                                            <label class="form-check-label" for="gte-12gb">
+                                                12GB and Above
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingEight">
+                                    <a class="py-2 text-decoration-none accordion-button collapsed"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false"
+                                        aria-controls="collapseEight">
+                                        Battery Size
+                                    </a>
+                                </h2>
+                                <div id="collapseEight" class="accordion-collapse collapse"
+                                    aria-labelledby="headingEight">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-2500">
+                                            <label class="form-check-label" for="gte-2500">
+                                                2500 mAH and Above
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-3000">
+                                            <label class="form-check-label" for="gte-3000">
+                                                3000 mAH and Above
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-3500">
+                                            <label class="form-check-label" for="gte-3500">
+                                                3500 mAH and Above
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-4000">
+                                            <label class="form-check-label" for="gte-4000">
+                                                4000 mAH and Above
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-5000">
+                                            <label class="form-check-label" for="gte-5000">
+                                                5000 mAH and Above
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="gte-6000">
+                                            <label class="form-check-label" for="gte-6000">
+                                                6000 mAH and Above
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNine">
+                                    <a class="py-2 text-decoration-none accordion-button collapsed"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false"
+                                        aria-controls="collapseNine">
+                                        Operating System
+                                    </a>
+                                </h2>
+                                <div id="collapseNine" class="accordion-collapse collapse"
+                                    aria-labelledby="headingNine">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="window">
+                                            <label class="form-check-label" for="window">
+                                                window
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="android">
+                                            <label class="form-check-label" for="android">
+                                                Andriod
+                                            </label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="ios">
+                                            <label class="form-check-label" for="ios">
+                                                iOS
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </aside>
+
+                <div class="products col-md-9" style="padding-top: 3rem; padding-bottom: 4rem;">
+                    <div class="row bg-white">
+
+                        <div class="col-12 bg-white pb-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
+                                        class="img-fluid p-6">
+
+
+                                </div>
+                                <div class="col md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="productDetails p-7">
+                                                <h4 class="p-title">Bootstrap Website</h4>
+                                                <p class="py-5 p-description mb-0">Lorem ipsum dolor sit amet
+                                                    consectetur
+                                                    labore...
+                                                    <a href="" class="textButton text-decoration-none">more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from jumia</a></p>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from konga</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 p-action">
+                                        <div class="col-lg-3 col-4 text-center rating" id="rating-1">
+                                            <span class="fa fa-lg fa-star-o" data-rating="1"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="2"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="3"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="4"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="5"
+                                                onclick="setRatingVar(this);"></span>
+                                            <input type="hidden" name="review" class="rating-value" value="4">
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Write a review</a></p>
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
+                                        class="img-fluid p-6">
+
+
+                                </div>
+                                <div class="col md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="productDetails p-7">
+                                                <h4 class="p-title">Bootstrap Website</h4>
+                                                <p class="py-5 p-description mb-0">Lorem ipsum dolor sit amet
+                                                    consectetur
+                                                    labore...
+                                                    <a href="" class="textButton text-decoration-none">more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from jumia</a></p>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from konga</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 p-action">
+                                        <div class="col-lg-3 col-4 text-center rating" id="rating-2">
+                                            <span class="fa fa-lg fa-star-o" data-rating="1"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="2"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="3"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="4"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="5"
+                                                onclick="setRatingVar(this);"></span>
+                                            <input type="hidden" name="review" class="rating-value" value="3">
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Write a review</a></p>
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
+                                        class="img-fluid p-6">
+
+
+                                </div>
+                                <div class="col md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="productDetails p-7">
+                                                <h4 class="p-title">Bootstrap Website</h4>
+                                                <p class="py-5 p-description mb-0">Lorem ipsum dolor sit amet
+                                                    consectetur
+                                                    labore...
+                                                    <a href="" class="textButton text-decoration-none">more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from jumia</a></p>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from konga</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 p-action">
+                                        <div class="col-lg-3 col-4 text-center rating" id="rating-3">
+                                            <span class="fa fa-lg fa-star-o" data-rating="1"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="2"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="3"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="4"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="5"
+                                                onclick="setRatingVar(this);"></span>
+                                            <input type="hidden" name="review" class="rating-value" value="4">
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Write a review</a></p>
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
+                                        class="img-fluid p-6">
+
+
+                                </div>
+                                <div class="col md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="productDetails p-7">
+                                                <h4 class="p-title">Bootstrap Website</h4>
+                                                <p class="py-5 p-description mb-0">Lorem ipsum dolor sit amet
+                                                    consectetur
+                                                    labore...
+                                                    <a href="" class="textButton text-decoration-none">more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from jumia</a></p>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from konga</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 p-action">
+                                        <div class="col-lg-3 col-4 text-center rating" id="rating-4">
+                                            <span class="fa fa-lg fa-star-o" data-rating="1"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="2"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="3"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="4"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="5"
+                                                onclick="setRatingVar(this);"></span>
+                                            <input type="hidden" name="review" class="rating-value" value="3">
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Write a review</a></p>
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
+                                        class="img-fluid p-6">
+
+
+                                </div>
+                                <div class="col md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="productDetails p-7">
+                                                <h4 class="p-title">Bootstrap Website</h4>
+                                                <p class="py-5 p-description mb-0">Lorem ipsum dolor sit amet
+                                                    consectetur
+                                                    labore...
+                                                    <a href="" class="textButton text-decoration-none">more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from jumia</a></p>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from konga</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 p-action">
+                                        <div class="col-lg-3 col-4 text-center rating" id="rating-5">
+                                            <span class="fa fa-lg fa-star-o" data-rating="1"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="2"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="3"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="4"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="5"
+                                                onclick="setRatingVar(this);"></span>
+                                            <input type="hidden" name="review" class="rating-value" value="3">
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Write a review</a></p>
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
+                                        class="img-fluid p-6">
+
+
+                                </div>
+                                <div class="col md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="productDetails p-7">
+                                                <h4 class="p-title">Bootstrap Website</h4>
+                                                <p class="py-5 p-description mb-0">Lorem ipsum dolor sit amet
+                                                    consectetur
+                                                    labore...
+                                                    <a href="" class="textButton text-decoration-none">more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from jumia</a></p>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from konga</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 p-action">
+                                        <div class="col-lg-3 col-4 text-center rating" id="rating-6">
+                                            <span class="fa fa-lg fa-star-o" data-rating="1"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="2"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="3"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="4"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="5"
+                                                onclick="setRatingVar(this);"></span>
+                                            <input type="hidden" name="review" class="rating-value" value="2">
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Write a review</a></p>
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
+                                        class="img-fluid p-6">
+
+
+                                </div>
+                                <div class="col md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="productDetails p-7">
+                                                <h4 class="p-title">Bootstrap Website</h4>
+                                                <p class="py-5 p-description mb-0">Lorem ipsum dolor sit amet
+                                                    consectetur
+                                                    labore...
+                                                    <a href="" class="textButton text-decoration-none">more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from jumia</a></p>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from konga</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 p-action">
+                                        <div class="col-lg-3 col-4 text-center rating" id="rating-7">
+                                            <span class="fa fa-lg fa-star-o" data-rating="1"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="2"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="3"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="4"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="5"
+                                                onclick="setRatingVar(this);"></span>
+                                            <input type="hidden" name="review" class="rating-value" value="3">
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Write a review</a></p>
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
+                                        class="img-fluid p-6">
+
+
+                                </div>
+                                <div class="col md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="productDetails p-7">
+                                                <h4 class="p-title">Bootstrap Website</h4>
+                                                <p class="py-5 p-description mb-0">Lorem ipsum dolor sit amet
+                                                    consectetur
+                                                    labore...
+                                                    <a href="" class="textButton text-decoration-none">more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from jumia</a></p>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from konga</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 p-action">
+                                        <div class="col-lg-3 col-4 text-center rating" id="rating-8">
+                                            <span class="fa fa-lg fa-star-o" data-rating="1"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="2"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="3"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="4"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="5"
+                                                onclick="setRatingVar(this);"></span>
+                                            <input type="hidden" name="review" class="rating-value" value="3">
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Write a review</a></p>
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="./assets/images/china_great_wall.jpg" alt="responsive webite"
+                                        class="img-fluid p-6">
+
+
+                                </div>
+                                <div class="col md-9">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="productDetails p-7">
+                                                <h4 class="p-title">Bootstrap Website</h4>
+                                                <p class="py-5 p-description mb-0">Lorem ipsum dolor sit amet
+                                                    consectetur
+                                                    labore...
+                                                    <a href="" class="textButton text-decoration-none">more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from jumia</a></p>
+                                        </div>
+
+                                        <div class="col-md-4 col-6 text-center">
+                                            <p class="price px-1 py-1"> #10,000</p>
+                                            <p class="store py-5 mb-0"><a href="#">buy from konga</a></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3 p-action">
+                                        <div class="col-lg-3 col-4 text-center rating" id="rating-9">
+                                            <span class="fa fa-lg fa-star-o" data-rating="1"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="2"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="3"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="4"
+                                                onclick="setRatingVar(this);"></span>
+                                            <span class="fa fa-lg fa-star-o" data-rating="5"
+                                                onclick="setRatingVar(this);"></span>
+                                            <input type="hidden" name="review" class="rating-value" value="4">
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Write a review</a></p>
+                                        </div>
+                                        <div class="col-lg-3 col-4 text-center">
+                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row text-center"
+                        style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important;">
+                        <div class="col-12">
+                            <div class="py-5 bg-white">
+                                <div class="row ">
+
+                                    <div class="justify-content-center col-lg-6 mx-auto text-center pagination">
+                                        <a href="#">1</a>
+                                        <a href="#">2</a>
+                                        <a href="#">3</a>
+                                        <a href="#">Next</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
+                            <h4 class="px-0" style="font-weight: 600; font-size: 1.8rem;">Mobiles in Nigeria</h4>
+                            <p style="line-height: 38.19px; font-size: 1rem;">                                
+                                Today’s mobiles are so much more than phones, they are undoubtedly one of the most
+                                happening gadget of the 21st century, because they are informative devices and are used
+                                to conduct online transactions. The modern man cannot think of buying and selling
+                                without a mobile phone. Hence, Pricebeta is built for you to search and compare prices
+                                from an array of items in one place online, it relieves you the hassle of visiting
+                                numerous stores online to meet your needs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+
+    <footer class="">
+
+        <!-- <div class="footer-sections"> -->
+        <div class="footer-section1">
+
+            <div class="social-icons">
+                <h3 style="margin-bottom: 3px;"><i>Price<span style="color: var(--gold)">Beta</span></i></h3>
+
+                <div class="socials">
+                    <div class="first-row">
+                        <a href="#"><i class="fa-regular fa-envelope" style="color: black;"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <div class="second-row" style="padding-top: 4%;">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-google-play"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="top-searches">
+                <h4>Top Searches</h4>
+                <ul>
+                    <li>
+                        <a href="#">Iphone 13 pro max</a>
+                    </li>
+                    <li>
+                        <a href="#">Iphone Xr</a>
+                    </li>
+                    <li>
+                        <a href="#">Galaxy S22</a>
+                    </li>
+                    <li>
+                        <a href="#">Galaxy A53</a>
+                    </li>
+                    <li>
+                        <a href="#">Google pixel 6 pro</a>
+                    </li>
+                    <li>
+                        <a href="#">Macbook</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="top-brand">
+                <h4>Top Brands</h4>
+                <ul>
+                    <li>
+                        <a href="#">Samsung</a>
+                    </li>
+                    <li>
+                        <a href="#">Apple</a>
+                    </li>
+                    <li>
+                        <a href="#">Google</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="top-stores">
+                <h4>Top Stores</h4>
+                <ul>
+                    <li>
+                        <a href="#">Jumia</a>
+                    </li>
+                    <li>
+                        <a href="#">Konga</a>
+                    </li>
+                    <li>
+                        <a href="#">Jiji</a>
+                    </li>
+                </ul>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="footer-section2">
+            <div class="copyright">
+                <i class="fas fa-copyright"></i>
+                <span style="color: #000;">2022</span>
+                <div class="vl"></div>
+                <h3><i><span style="color: var(--blueactive);">Price</span><span
+                            style="color: var(--gold);">Beta</span></i></h3>
+            </div>
+
+            <div class="footer-nav">
+
+                <ul class="foot-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Category</a>
+                    </li>
+                    <li>
+                        <a href="./about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="./docs/">Documentation</a>
+                    </li>
+                    <li>
+                        <a href="#">Register</a>
+                    </li>
+                    <li>
+                        <a href="./term.html">Terms</a>
+                    </li>
+                    <li>
+                        <a href="./privacy.html">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="#">Subscribe</a>
+                    </li>
+                    <li>
+                        <a href="#">Support</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        </div>
+        <div class="show">
+            <i class="fas fa-copyright"></i>
+            <span> 2022</span>
+        </div>
+
+
+
+        <!-- FOOTER SECTION ENDS HERE -->
+
+
+    </footer>
+
+    <!-- bootsrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/category.js"></script>
+</body>
+
+</html>

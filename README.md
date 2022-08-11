@@ -2,8 +2,22 @@
 
 
 # PriceBeta - A price aggregator website
-> PriceBeta, a comparison shopping engine, is a tool or platform that allows users to compare price of various products, and shipping options  across multiple merchants and retailers platforms and in the process presenting the users with price offers that best meets their interest. Check details about the project here: https://docs.google.com/document/d/1yaiog7p-ce9JNXCFoObXCryWerGuXBECMKkDxz2Il1Y/edit?usp=sharing
+> PriceBeta, a comparison shopping engine, is a tool or platform that allows users to compare price of various products, and shipping options  across multiple merchants and retailers platforms and in the process presenting the users with price offers that best meets their interest.
 
+### Project Presentation 
+> <a href="https://drive.google.com/file/d/1ofWTmmhIvufGERQuQCV9NSlkCLRAaGvz/view?usp=drivesdk">Team 21_Price compare</a>
+
+### Project Documentation
+> <a href="https://docs.google.com/document/d/1yaiog7p-ce9JNXCFoObXCryWerGuXBECMKkDxz2Il1Y/edit">Team 21_Price compare</a>
+
+### Project Figma Board
+> <a href="https://www.figma.com/file/2Rm18o3n7a86AcfpdZgrYF/PriceBeta?node-id=0%3A1">Team 21_Price compare</a>
+
+### Project Database Schema
+> <a href="https://www.figma.com/file/2Rm18o3n7a86AcfpdZgrYF/PriceBeta?node-id=221%3A2019">Team 21_Price compare</a>
+
+### Member Info and Attendance
+> <a href="https://docs.google.com/spreadsheets/d/1Q-leU7gkbaB_k7wxZxNqxBdzxy9mPy5qTXtAS71bToQ/edit">Team 21_Price compare</a>
 
 ## Table of Contents
 * [General Information](#general-information)
@@ -28,7 +42,7 @@
 - HTML/CSS/Javascript (Frontend)
 - MYSQL (Database)
 - Bootstrap - version 5.0 (Frontend Library)
-- Django - version (Backend)
+- Django - version 4.0 (Backend)
 
 
 ## Features
@@ -81,7 +95,7 @@ Authenticated Users:
 - Customize your profile
 - Search for your preffered product
 - Compare prices from search results
-- Proceed to buy from your choosen marchant/retailer
+- Proceed to buy from your choosen merchant/retailer
 
 
 ## Project Status
@@ -93,15 +107,15 @@ Project is: _in progress_
 
 2. Navigate to the terminal (pointing to your project folder/directory), Clone and then open it up on your prefered code editor
 ```bash 
-git clone https://github.com/<your github username>/Price-compare-project-team-21-Backend.git
+git clone https://github.com/<your github username>/Team_21-Price-Compare.git
 ```
 
 3.  Open terminal and set upstream branch:  
 ```bash 
-git remote add upstream https://github.com/zuri-training/Price-compare-project-team-21-Backend.git
+git remote add upstream https://github.com/zuri-training/Team_21-Price-Compare.git
 ```
 
-4.  Pull upstream to get the latest update from the original repo (https://github.com/zuri-training/Price-compare-project-team-21-Backend.git)
+4.  Pull upstream to get the latest update from the original repo (https://github.com/zuri-training/Team_21-Price-Compare.git)
 ```bash
 git pull upstream main
 ```
@@ -149,10 +163,15 @@ Saad Saheed
 - Github - https://github.com/Saad-Saheed
 - Stack - Frontend
 
-Chukwuemeka Orioha
+Chukwuemeka Orioha(Deactivated)
 - Email - chuksorioha@gmail.com
 - Github - https://github.com/Chuksorio
 - Stack - FullStack
+
+Forever Obaseki 
+- Email - foreverobaseki@gmail.com 
+- Github - https://github.com/EverObas
+- Stack - Product Design
 
 Buhari Yusuf
 - Email - buhariyusuf@gmail.com
@@ -199,7 +218,7 @@ Kenneth Akhonokhue
 - Github - https://github.com/kennethafegbai
 - Stack - FullStack
 
-Peace Oyewole
+Peace Oyewole(deactivated)
 - Email - Oyewolepeace94@gmail.com
 - Github - https://github.com/Peacefsps
 - Stack - Frontend
@@ -234,7 +253,7 @@ Adeboun Toyosi
 - Github - https://github.com/davideboun21
 - Stack - Backend
 
-Success Ogbenna
+Success Ogbenna(Deactivated)
 - Email - successzero7@gmail.com
 - Github - https://github.com/successogbenna
 - Stack - FullStack
@@ -244,7 +263,7 @@ Oke Abosede
 - GitHub - https://github.com/Ade-nike17
 - Stack - FullStack
 
-Ezemenahi Chiamaka Sylvia
+Ezemenahi Chiamaka Sylvia(Deactivated)
 - Email - ezemenahichiamaka@gmail.com
 - GitHub - https://github.com/chezclsy
 - Stack - Product Design
