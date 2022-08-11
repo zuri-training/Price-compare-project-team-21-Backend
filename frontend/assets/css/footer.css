@@ -16,11 +16,9 @@
     padding: 0;
 }
 
-body {
-  color: white;
-}
 
 footer {
+  color: white;
     padding-top: 3px;
     padding-bottom: 6px;
     background-color: var(--blueactive);
@@ -126,19 +124,19 @@ footer {
     height: 25px;
   }
   
-  .show {
+  footer .show {
     display: flex; 
     justify-content: flex-end; 
     padding-top: 28px;
     visibility: hidden;
   }
   
-  .show > i {
+  footer .show > i {
     padding-right: 8px; 
     font-size: 1.5rem;
   }
   
-  .show > span {
+  footer .show > span {
     color: white;
     padding-right: 5px;
   }
@@ -193,7 +191,7 @@ footer {
             padding-left: 3%
           }
     
-        .show {
+        footer .show {
             visibility: unset;
           }
    }
