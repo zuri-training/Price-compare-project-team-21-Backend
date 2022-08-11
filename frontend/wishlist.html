@@ -5,41 +5,59 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Wish List</title>
+  <!-- Bootstrap css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+  <!-- custom css -->
   <link rel="stylesheet" href="./assets/css/wishlist.css">
+  <!-- font-aweseme -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Footer Css -->
   <link rel="stylesheet" href="./assets/css/footer.css">
-  <link rel="stylesheet" href="./assets/css/none-auth-navbar.css">
+  <!-- Header Css -->
+  <link rel="stylesheet" href="./assets/css/user-header.css">
 </head>
 <body>
     <header class="position-sticky top-0" style="z-index: 55;">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="./index.html">Price<span style="color: #F28202;">Beta</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <form action="" class="search-form me-lg-4 d-flex">
-                        <input type="text" class="form-control" placeholder="Search products..." aria-label="search"
-                            aria-describedby="button-search">
-                        <button class="btn text-white px-4" style="font-size: 1.2rem;" type="submit"
-                            id="button-search">Search</button>
-                    </form>
-
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item me-lg-4">
-                            <a class="nav-link" href="#">All Categories</a>
-                        </li>
-                        <li class="nav-item me-lg-4">
-                            <a class="nav-link" href="#">Log In</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+        <nav class="nav-bar">
+             <div class="logo">
+                   <h2 style="color: black;" class="">Price<span>Beta</span></h2>
+                   <h3 class="">Home</h3>
+             </div>
+             <div class="form">
+                   <form class="search-bar">
+                     <input type="text" name="search" id="search" placeholder="Search Product">
+                     <button type="submit">Search</button>
+                   </form>
+             </div>
+             
+             <div class="user-infos">
+                    <div class="display-info">
+                         <div class="info" id="info">
+                              <img src="./assets/images/user-dp.png" alt="user-dp">
+                              <p style="margin-bottom: 0; margin-right:10px" class="mid">Kesha Midrick </p>
+                              <div class="chev-up" id="chev">
+                                  <i class="bi bi-chevron-up"></i>
+                              </div>
+                              <div class="options" id="option">
+                                   <a class="profile" href="user.html">My Profile</a> <br>
+                                   <a class="subscribe"href="#">Newsletter Subscription</a><br>
+                                   <a class="reviews" href="#">My reviews</a> <br>
+                                   <a class="log-out" href="#">Log out</a>
+                              </div>
+                         </div>
+                         
+                         
+                    </div>
+                      
+                   <!-- <div class="location">
+                       <img src="./assets/images/nigeria.png" alt="nigeria">
+                       <i class="bi bi-chevron-down"></i>
+                   </div> -->
+             </div>
+             
+             
         </nav>
     </header>
     <main>
