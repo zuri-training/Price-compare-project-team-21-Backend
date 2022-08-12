@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}<title>Phone Category</title>{% endblock %}
+    {% block title %}<title>accessory Category</title>{% endblock %}
     <!-- bootsrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -154,14 +154,14 @@
                 style="border-right: 2px solid #F0F0F0 !important;">
                 <select name="category" class="form-control form-select" id="">
                     <option value="" selected>Browse Category</option>
-                    <option value="phone"><a href="{% url 'all_phones' %}" target='_blank'>Phones</a></option>
-                    <option value="laptop"><a href="{% url 'all_laptops' %}" target='_blank'>Laptops</a></option>
+                    <option value="accessory">Phones</option>
+                    <option value="laptop">Laptops</option>
                     <option value="accessories">Accessories</option>
                 </select>
             </div>
 
             <div class="col-md-9 py-3 d-flex justify-content-between align-items-center">
-                <h5>Top Product in Phone Category</h5>
+                <h5>Top Product in accessory Category</h5>
                 <div class="">
                     <!-- <label for="sort" class="d-inline-block form-label">sort by:</label> -->
                     <select name="category" class="d-inline-block form-control form-select" id="sort">
@@ -185,7 +185,7 @@
                 <form action="search-form" class="d-flex flex-column align-items-center justify-content-center">
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Iphone" aria-label="search"
+                        <input type="text" class="form-control" placeholder="accessory" aria-label="search"
                             aria-describedby="button-search">
                         <button class="btn text-white" style="font-size: 1.2rem;" type="submit"
                             id="button-search">Search</button>
@@ -631,10 +631,10 @@
                     <div class="col-12 bg-white" style="border-bottom: 2px solid #F0F0F0 !important;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 1%}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -643,20 +643,20 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails p-7">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.first%}
-                                    <h2>{{ phone.name }}</h2>
+                                    <h2>{{ accessory.name }}</h2>
                                     {% endif%}
                                     {% endfor %}
 
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 1 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}
                                     
-                                        {% for phone in phone_category%}
+                                        {% for accessory in accessory_category%}
                                         {% if forloop.counter == 2 %}
                                         
                                     
@@ -682,15 +682,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 1%}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 1%}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -698,15 +698,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 1%}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 1 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>
@@ -726,10 +726,10 @@
                         style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important; top: 0px; z-index: 22;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 2 %}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -738,15 +738,15 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 2 %}
-                                    <h2> {{ phone.name }} </h2>
+                                    <h2> {{ accessory.name }} </h2>
                                     {% endif %}
                                     {% endfor %}
                                     <
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 2 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}
@@ -771,15 +771,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 2 %}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 2 %}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -787,15 +787,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 2 %}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 2 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>
@@ -814,10 +814,10 @@
                         style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important; top: 0px; z-index: 22;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 3 %}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -826,14 +826,14 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 3 %}
-                                    <h2> {{ phone.name }} </h2>
+                                    <h2> {{ accessory.name }} </h2>
                                     {% endif %}
                                     {% endfor %}
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 3 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}
@@ -858,15 +858,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 3 %}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 3 %}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -874,15 +874,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 3 %}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 3 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>
@@ -901,10 +901,10 @@
                         style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important; top: 0px; z-index: 22;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 4 %}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -913,14 +913,14 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 4 %}
-                                    <h2> {{ phone.name }} </h2>
+                                    <h2> {{ accessory.name }} </h2>
                                     {% endif %}
                                     {% endfor %}
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 4 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}
@@ -945,15 +945,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 4 %}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 4 %}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -961,15 +961,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 4 %}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}>
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 4 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>
@@ -988,10 +988,10 @@
                         style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important; top: 0px; z-index: 22;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 5 %}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -1000,14 +1000,14 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 5 %}
-                                    <h2> {{ phone.name }} </h2>
+                                    <h2> {{ accessory.name }} </h2>
                                     {% endif %}
                                     {% endfor %}
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 5 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}
@@ -1032,15 +1032,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 5 %}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 5 %}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -1048,15 +1048,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 5 %}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 5 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>
@@ -1075,10 +1075,10 @@
                         style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important; top: 0px; z-index: 22;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 6 %}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -1087,14 +1087,14 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 6 %}
-                                    <h2> {{ phone.name }} </h2>
+                                    <h2> {{ accessory.name }} </h2>
                                     {% endif %}
                                     {% endfor %}
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 6 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}.
@@ -1119,15 +1119,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 6 %}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 6 %}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -1135,15 +1135,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 6 %}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    <{% for phone in phone_category %}
+                                    <{% for accessory in accessory_category %}
                                     {% if forloop.counter == 6 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>
@@ -1162,10 +1162,10 @@
                         style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important; top: 0px; z-index: 22;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 7 %}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -1174,14 +1174,14 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 7 %}
-                                    <h2> {{ phone.name }} </h2>
+                                    <h2> {{ accessory.name }} </h2>
                                     {% endif %}
                                     {% endfor %}
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 7 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}
@@ -1206,15 +1206,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 7 %}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 7 %}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -1222,15 +1222,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 7 %}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 7 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>
@@ -1249,10 +1249,10 @@
                         style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important; top: 0px; z-index: 22;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 8 %}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -1261,14 +1261,14 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 8 %}
-                                    <h2> {{ phone.name }} </h2>
+                                    <h2> {{ accessory.name }} </h2>
                                     {% endif %}
                                     {% endfor %}
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 8 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}
@@ -1293,15 +1293,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 8 %}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 8 %}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -1309,15 +1309,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 8 %}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 8 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>
@@ -1336,10 +1336,10 @@
                         style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important; top: 0px; z-index: 22;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 9 %}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -1348,14 +1348,14 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 9 %}
-                                    <h2> {{ phone.name }} </h2>
+                                    <h2> {{ accessory.name }} </h2>
                                     {% endif %}
                                     {% endfor %}
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 9 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}
@@ -1380,15 +1380,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 9 %}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 9 %}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -1396,15 +1396,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 9 %}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 9 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>
@@ -1422,10 +1422,10 @@
                         style="border-bottom: 2px solid #F0F0F0 !important; border-collapse: collapse !important; top: 0px; z-index: 22;">
                         <div class="row">
                             <div class="col-sm-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 10 %}
 
-                                <img src="{{phone.image_url}}" alt="responsive webite"
+                                <img src="{{accessory.image_url}}" alt="responsive webite"
                                 class="img-fluid p-6">
                                 {% endif %}
                                 {% endfor %}
@@ -1434,14 +1434,14 @@
                             </div>
                             <div class="col-xl-3 col-lg-2 col-md-3">
                                 <div class="productDetails">
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 10 %}
-                                    <h2> {{ phone.name }} </h2>
+                                    <h2> {{ accessory.name }} </h2>
                                     {% endif %}
                                     {% endfor %}
-                                    {% for phone in phone_category%}
+                                    {% for accessory in accessory_category%}
                                     {% if forloop.counter == 10 %}
-                                    <p class="py-5">{{ phone.description }}
+                                    <p class="py-5">{{ accessory.description }}
                                         <span class="point"> ....</span>
                                     {% endif %}
                                     {% endfor %}
@@ -1466,15 +1466,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 10 %}  
-                                <p class="price col-sm-3"> {{ phone.store1_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store1_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 10 %}
-                                    <a href="{{ phone.store1_url }}">buy from jumia</a></p>
+                                    <a href="{{ accessory.store1_url }}">buy from jumia</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Write a review</a></p>
@@ -1482,15 +1482,15 @@
                             </div>
 
                             <div class="col-md-3">
-                                {% for phone in phone_category %}
+                                {% for accessory in accessory_category %}
                                 {% if forloop.counter == 10 %}  
-                                <p class="price col-sm-3"> {{ phone.store2_price}}</p>
+                                <p class="price col-sm-3"> {{ accessory.store2_price}}</p>
                                 {% endif %}
                                 {% endfor %}
                                 <p class="store">
-                                    {% for phone in phone_category %}
+                                    {% for accessory in accessory_category %}
                                     {% if forloop.counter == 10 %}
-                                    <a href="{{ phone.store2_url }}">buy from konga</a></p>
+                                    <a href="{{ accessory.store2_url }}">buy from konga</a></p>
                                     {% endif %}
                                     {% endfor %}
                                 <p class="shop"><a href="#">Add to cart</a></p>

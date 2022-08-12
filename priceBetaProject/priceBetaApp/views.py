@@ -2,6 +2,7 @@ from multiprocessing import context
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect, HttpResponse
+from .models import Product
 
 
 
@@ -35,17 +36,28 @@ def review(request):
 def user_profile(request):
     return render(request,'user_profile.html')
 
-def accessories_category(request):
-    return render(request,'accessories_category.html')
+# def accessories_category(request):
+#     return render(request,'accessories_category.html')
+def all_accessory(request):
+    accessory_category = Product.objects.filter(category_id=3)
+    return render(request, 'accessory_category.html', {'accessory_category': accessory_category})
 
-def laptop_category(request):
-    return render(request,'laptop_category.html')
+# def laptop_category(request):
+#     return render(request,'laptop_category.html')
+def all_laptops(request):
+    laptop_category = Product.objects.filter(category_id=2)
+    return render(request, 'laptop_category.html', {'laptop_category' : laptop_category })
 
-def phone_category(request):
-    return render(request,'phone_category.html')
 
-def Product(request):
-    return HttpResponse("It is working")
+# def phone_category(request):
+#     return render(request,'phone_category.html')
+def all_phones(request):
+    phone_category = Product.objects.filter(category_id=1)
+    return render(request, 'phone_category.html', {'phone_category': phone_category})
+
+
+# def Product(request):
+#     return HttpResponse("It is working")
 
 def Category(request):
     return HttpResponse('Working')
