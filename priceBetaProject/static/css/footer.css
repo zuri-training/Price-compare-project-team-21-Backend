@@ -16,7 +16,7 @@
 }
 
  body{
-  color: white;
+  background-color: #fff;
  }
 
 *{
@@ -98,7 +98,7 @@ h3, h4 {
   
   .foot-nav > li > a:hover {
     color: black;
-    font-size: 1.3rem;
+    color: rgb(71, 71, 71);
     transition: ease-in;
   }
   
