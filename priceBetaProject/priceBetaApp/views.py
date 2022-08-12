@@ -10,7 +10,10 @@ from .models import Product
 
 
 def index(request):
-    return render(request,'index.html')
+    accessory_category = Product.objects.filter(category_id=3)
+    laptop_category = Product.objects.filter(category_id=2)
+    phone_category = Product.objects.filter(category_id=1)
+    return render(request,'index.html', {'accessory_category': accessory_category,'laptop_category' : laptop_category , 'phone_category': phone_category} )
 
 def about(request):
     return render(request,'about.html')
