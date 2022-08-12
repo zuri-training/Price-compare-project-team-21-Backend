@@ -14,8 +14,9 @@
   --bluedark: #008899;
   --gold: #f28202;
 }
+
  body{
-   background-color: white;
+  color: white;
  }
 
 *{
@@ -42,7 +43,7 @@ h3, h4 {
   .footer-section1 {
       display: flex;
       justify-content: space-evenly;
-      padding-top: 80px;
+      padding-top: 60px;
       padding-bottom: 60px;
   }
 
@@ -96,7 +97,8 @@ h3, h4 {
   }
   
   .foot-nav > li > a:hover {
-    color: rgb(71, 71, 71);
+    color: black;
+    font-size: 1.3rem;
     transition: ease-in;
   }
   
