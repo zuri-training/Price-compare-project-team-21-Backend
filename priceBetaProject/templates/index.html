@@ -6,19 +6,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}<title>Homepage</title>{% endblock %}
+    {% block title %}<title>PriceBeta</title>{% endblock %}
     <!-- bootsrap css -->
-
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   <!-- boxicons css -->
+  
+    <!-- boxicons css -->
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 
     <!-- Font Awesome css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- native css -->
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
@@ -26,14 +24,14 @@
       <nav>
         <div class="navbar">
           <i class='bx bx-menu'></i>
-          <div class="logo"><a href="#">Price<span style="color: black;">Beta</span></a></div>
+          <div class="logo"><a href="{% url 'index' %}"><i>Price<span style="color: var(--gold);">Beta</span></i></a></div>
           <div class="nav-links">
             <div class="sidebar-logo">
-              <span class="logo-name">Price<span style="color: black;">Beta</span></span>
+              <span class="logo-name"><i>Price<span style="color: var(--gold);">Beta</i></span></span>
               <i class='bx bx-x' ></i>
             </div>
             <ul class="links">
-                <a href="{% url 'index' %}">HOME</a></li>
+              <li><a href="{% url 'index' %}">HOME</a></li>
               <li>
                 <a href="#">CATEGORY</a>
                 <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
@@ -86,15 +84,15 @@
                   <div class="dd_right">
                     <ul>
                       <li>
-                           Welcome to PriceBeta
+                           Welcome to <i><span style="color: var(--blueactive);"> Price</span><span style="color:  var(--gold);">Beta</span></i> <b>!</b>
                          </li>
                       <li>
-                           <button class="profile-btn"><a href="{% url 'login' %}">Sign In</a> </button>
-                         <button class="profile-btn"><a href="{% url 'signup' %}">Sign Up</a> </button>
+                           <button class="profile-btn1"><a href="{% url 'signup' %}">Register</a> </button>
+                         <button class="profile-btn2"><a href="{% url 'login' %}">Sign In</a> </button>
                           </li>
                           <hr>
                           <li><a href="#">Coupon</a></li>
-                          <li><a href="#">Wish List</a></li>
+                          <li><a href="{% url 'wishlist' %}">Wish List</a></li>
                           <li><a href="#">Support</a></li>
                     </ul>
                   </div>
@@ -107,12 +105,12 @@
        
           <div>
             <div class="big-header-container">
-              <h1><span style="color: var(--blueactive);">Price</span><span style="color: black;">Beta</span></h1> 
-                <img class="phone1" src="{% static 'images/phone_1.png' %}" alt="phone">
+              <h1><span style="color: var(--blueactive);"><i> Price</span><span style="color: var(--gold);">Beta</i></span></h1> 
+                <img class="phone1" src="{% static 'images/phone 1.png' %}" alt="phone">
             </div>
                 
-               <p class="motto"><i>Yafun Yafun</i></p> 
-                <form class="search" action="">
+               <p class="motto">Yafun Yafun</p> 
+                <form class="search" action="">{% csrf_token %}
                     <input type="text" name="search" placeholder="What are you looking for?">
                     <button type="submit" class="search-btn">Search</button>
                 </form>
@@ -128,102 +126,201 @@
 <a  href="#">View more</a>
 </div>
 
+<div class="carousel-wrapper">
+  <div class="owl-carousel owl-theme">
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=1" />
+        <div class="img-text">
+          <p class="phone-1"><a href="#">Iphone Xr </a></p>
+          <p class="phone1-price" style="color: red;">#30,000</p>
+          <p class="phone1-store" style="color: gray;">Price from Jumia</p>
+        </div>
+      </div>
 
-<div class="wrapper">
-  <div class="carousel owl-carousel">
-     <div class="card card-1">
-        <img width="10%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSck2Bgk_cM2nJ7hh2lWOu8ytP4KFW-r4AVmg&usqp=CAU" alt="phone">
-   
-        <div class="phone-description">
-          <!-- description goes here -->
-    </div>
-       
-     </div>
-     <div class="card card-2">
-        B
-     </div>
-     <div class="card card-3">
-        C
-     </div>
-     <div class="card card-4">
-        D
-     </div>
-     <div class="card card-5">
-        E
-     </div>
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=2" />
+        <div class="img-text">
+          <p class="phone-2"><a href="#">Google pixel </a></p>
+          <p class="phone2-price" style="color: red;">#30,000</p>
+          <p class="phone2-store" style="color: gray;">Price from Konga</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=3" />
+        <div class="img-text">
+          <p class="phone-3"><a href="#">Vevo </a></p>
+          <p class="phone3-price" style="color: red;">#30,000</p>
+          <p class="phone3-store" style="color: gray;">Price from Jiji</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=4" />
+        <div class="img-text">
+          <p class="phone-4"><a href="#">Infinix Zero </a></p>
+          <p class="phone4-price" style="color: red;">#30,000</p>
+          <p class="phone4-store" style="color: gray;">Price from Jumia</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=5" />
+        <div class="img-text">
+          <p class="phone-5"><a href="#">Tecno C9 </a></p>
+          <p class="phone5-price" style="color: red;">#30,000</p>
+          <p class="phone5-store" style="color: gray;">Price from Jiji</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=6" />
+        <div class="img-text">
+          <p class="phone-6"><a href="#">Samsung S7 </a></p>
+          <p class="phone6-price" style="color: red;">#30,000</p>
+          <p class="phone6-store" style="color: gray;">Price from Konga</p>
+        </div>
+      </div>
+     
   </div>
 </div>
-<hr>
+
+<hr style="margin-bottom: 8%; margin-top: -25px; color: rgb(194, 191, 191);">
+
+
 
 <div class="hcontainer">
   <h6>Top Products in Computers</h6>
   <a  href="#">View more</a>
   </div>
   
-  
-  <div class="wrapper">
-    <div class="carousel owl-carousel">
-       <div class="card card-1">
-          <img width="10%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSck2Bgk_cM2nJ7hh2lWOu8ytP4KFW-r4AVmg&usqp=CAU" alt="phone">
-     
-          <div class="phone-description">
-            <!-- description goes here -->
+  <div class="carousel-wrapper">
+    <div class="owl-carousel owl-theme">
+      
+        <div class="item">
+          <img src="https://picsum.photos/640/480?pic=6" />
+          <div class="img-text">
+            <p class="computer-1"><a href="#">Macbook Pro </a></p>
+            <p class="computer1-price" style="color: red;">#520,000</p>
+            <p class="computer1-store" style="color: gray;">Price from Jumia</p>
+          </div>
       </div>
-         
-       </div>
-       <div class="card card-2">
-          B
-       </div>
-       <div class="card card-3">
-          C
-       </div>
-       <div class="card card-4">
-          D
-       </div>
-       <div class="card card-5">
-          E
-       </div>
+
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=8" />
+        <div class="img-text">
+          <p class="computer-2"><a href="#">Lenovo Thinkpad </a></p>
+          <p class="computer2-price" style="color: red;">#120,000</p>
+          <p class="computer2-store" style="color: gray;">Price from Konga</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=9" />
+        <div class="img-text">
+          <p class="computer-3"><a href="#">HP Pavilion </a></p>
+          <p class="computer3-price" style="color: red;">#230,000</p>
+          <p class="computer3-store" style="color: gray;">Price from Jumia</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=10"/>
+        <div class="img-text">
+          <p class="computer-4"><a href="#"> Acer </a></p>
+          <p class="computer4-price" style="color: red;">#300,000</p>
+          <p class="computer4-store" style="color: gray;">Price from Jiji</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=11" />
+        <div class="img-text">
+          <p class="computer-5"><a href="#">Toshiba </a></p>
+          <p class="computer5-price" style="color: red;">#230,000</p>
+          <p class="computer5-store" style="color: gray;">Price from Konga</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="https://picsum.photos/640/480?pic=12" />
+        <div class="img-text">
+          <p class="computer-6"><a href="#">Macbook Pro </a></p>
+          <p class="computer6-price" style="color: red;">#320,000</p>
+          <p class="computer6-store" style="color: gray;">Price from Konga</p>
+        </div>
+      </div>
+
     </div>
   </div>
-  <hr>
-   
+
+  <hr style="margin-bottom: 8%; margin-top: -25px; color: rgb(194, 191, 191);">
+
+
   <div class="hcontainer">
     <h6>Top Products in Accessories</h6>
     <a  href="#">View more</a>
     </div>
     
-    
-    <div class="wrapper">
-      <div class="carousel owl-carousel">
-         <div class="card card-1">
-            <img width="10%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSck2Bgk_cM2nJ7hh2lWOu8ytP4KFW-r4AVmg&usqp=CAU" alt="phone">
-       
-            <div class="phone-description">
-              <!-- description goes here -->
+    <div class="carousel-wrapper">
+      <div class="owl-carousel owl-theme">
+            
+        <div class="item">
+          <img src="https://picsum.photos/640/480?pic=10" />
+          <div class="img-text">
+            <p class="Accessories-1"><a href="#">Macbook Pro Charger </a></p>
+            <p class="Accessories1-price" style="color: red;">#30,000</p>
+            <p class="Accessories1-store" style="color: gray;">Price from Konga</p>
+          </div>
         </div>
-           
-         </div>
-         <div class="card card-2">
-            B
-         </div>
-         <div class="card card-3">
-            C
-         </div>
-         <div class="card card-4">
-            D
-         </div>
-         <div class="card card-5">
-            E
-         </div>
-      </div>
-    </div>
-    <hr>
 
+        <div class="item">
+          <img src="https://picsum.photos/640/480?pic=11" />
+          <div class="img-text">
+            <p class="Accessories-2"><a href="#">Tecno Charger </a></p>
+            <p class="Accessories2-price" style="color: red;">#5,000</p>
+            <p class="Accessories2-store" style="color: gray;">Price from Jumia</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="https://picsum.photos/640/480?pic=12" />
+          <div class="img-text">
+            <p class="Accessoriesr-4"><a href="#">Macbook Pro Charger </a></p>
+            <p class="Accessories4-price" style="color: red;">#30,000</p>
+            <p class="Accessories4-store" style="color: gray;">Price from Jiji</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="https://picsum.photos/640/480?pic=13" />
+          <div class="img-text">
+            <p class="Accessories-5"><a href="#">Infixix Charger </a></p>
+            <p class="Accessories5-price" style="color: red;">#5,000</p>
+            <p class="Accessories5-store" style="color: gray;">Price from Jumia</p>
+          </div>
+        </div>
+
+          <div class="item">
+            <img src="https://picsum.photos/640/480?pic=1" />
+            <div class="img-text">
+              <p class="Accessories-5"><a href="#">Tecno Charger </a></p>
+              <p class="Accessories5-price" style="color: red;">#5,000</p>
+              <p class="Accessories5-store" style="color: gray;">Price from Konga</p>
+            </div>
+            </div>
+          
+    </div>
+    </div>
 </div>
+
+<hr style="margin-bottom: 3%; margin-top: -25px; color: rgb(194, 191, 191);">
+
+
 
 <div style="color: black; text-align: left; margin: 2% 5%;">
   <h2>Shopping in Nigeria</h2>
-  <p style="line-height: 1.8; padding-right: 10%;">Whether you need a computer for personal or business use , be rest assured that you would  find
+  <p style="line-height: 1.8; padding-right: 10%; font-size: 1.2rem;">Whether you need a computer for personal or business use , be rest assured that you would  find
     the ideal phone, laptop or accessories that specifically suits your needs. Discover new and used 
     phones, laptops and accessories in Nigeria for sale. Enjoy the best price aggregator tool for 
     your favourite products on PriceBeta.
@@ -231,12 +328,15 @@
 </div>
 </main>
 
+
+<!-- FOOTER SECTION  STARTS HERE -->
+
 <footer>
   <!-- <div class="footer-sections"> -->
   <div class="footer-section1">
 
   <div class="social-icons">
-<h3 style="margin-bottom: 3px;">Price<span style="color: black">Beta</span></h3>
+<h3 style="margin-bottom: 3px;"><i>Price<span style="color: var(--gold)">Beta</span></i></h3>
   
   <div class="socials">
     <div class="first-row">
@@ -315,8 +415,12 @@
 </div>
 
 <div class="footer-section2">
-
-  <h3 style="color: gray; font-size: 1.4rem; padding-left: 5%; margin-top: 5px;">PriceBeta</h3>
+  <div class="copyright">
+    <i class="fas fa-copyright"></i>
+    <span style="color: #000;">2022</span>
+     <div class="vl"></div>
+    <h3><i><span style="color: var(--blueactive);">Price</span><span style="color: var(--gold);">Beta</span></i></h3>
+  </div>
 
   <div class="footer-nav">
 
@@ -331,10 +435,10 @@
         <a href="{% url 'about' %}">About</a>
       </li>
       <li>
-        <a href="#">Documentation</a>
+        <a href="./docs">Documentation</a>
       </li>
       <li>
-        <a href="{% url 'signup' %}">Register</a>
+        <a href="{% url 'index' %}">Register</a>
       </li>
       <li>
         <a href="{% url 'term' %}">Terms</a>
@@ -353,8 +457,14 @@
   </div>
 </div>
 </div>
+<div class="show">
+  <i class="fas fa-copyright"></i>
+  <span> 2022</span>
+</div>
 
 </footer>
+
+<!-- FOOTER SECTION ENDS HERE -->
 
     <!-- frameworks and native js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -363,5 +473,4 @@
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
-
-{% endblock content %}
+{% endblock %}

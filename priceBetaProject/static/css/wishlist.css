@@ -51,21 +51,11 @@ body{
 
 .mx-auto{
  width: 650px !important;
- position: relative;
-}
-
-.close-img{
-  position: absolute;
-  top: -16px;
-  right: -16px;
-  background-color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
 }
 
 @media(max-width: 600px){
   .mx-auto{
-    width: 90% !important;
+    width: 100% !important;
     font-size: 7px;
   }
 
