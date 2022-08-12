@@ -46,8 +46,9 @@
     input {
         display: block;
         width: 100%;
-        padding: 4px;
-        padding-left: 10px;
+        outline: none;
+        font-size: .95rem;
+        padding: 10px 20px;
         border: 1px solid var(--lightblueactive);
         border-radius: 5px;
         background-color: var(--lightblue);
@@ -155,14 +156,15 @@
         border-radius: 5px;
     }
 
-    .viewpwd.material-icons {
-        float: right;
-        margin-left: -25px;
-        margin-top: -28px;
+    .inputholder {
         position: relative;
-        z-index: 2;
+    }
+
+    .viewpwd.material-icons {
+        position: absolute;
         cursor: pointer;
-   
+        right: 10px;
+        top: 10px;
        }
 
 @media (max-width: 1028px) {
