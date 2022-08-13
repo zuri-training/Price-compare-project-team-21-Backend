@@ -49,9 +49,10 @@
 
 ## Technologies Used
 - HTML/CSS/Javascript (Frontend)
-- MYSQL (Database)
+- DB.SQLITE (Database)
 - Bootstrap - version 5.0 (Frontend Library)
-- Django - version 4.0 (Backend)
+- Django - version 4.0.5 (Backend)
+- Python - version 3.10.5 
 
 
 ## Features
