@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>PriceBeta | Signup</title>
-</head>
-
 {% block content %}
-<body>
-    <div class="container">
-        <div class="con">
-            <h3>Create a secure PriceBeta Account</h3>
-            <p>Welcome to the Number 1 Price Comparison website!</p>
-            <p>Enter your details to get started</p>
-        </div>
-        <div class="form">
-            <form method="POST" action= "{% url 'signup' %}">{% csrf_token %}
-                {{form.as_p}}
-                    <button type="submit">CREATE ACCOUNT</button>
-            </form>
-        </div>
-    </div>
 
-<footer>
-    <p>Already have an account? <a href="{% url 'login'%}">Login</a></p>
-</footer>
-</body>
-{% endblock content %}
-<html>
+<h2>Sign Up</h2>
+<form method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+        <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+            {% if field.help_text %}
+             <small style="color:grey">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+                <p style="color:red">{{ error }}</p>
+            {% endfor %}
+        </p>
+    {% endfor %}
+    <button type="submit">Sign Up</buttton>
+</form>
+{% endblock %}
