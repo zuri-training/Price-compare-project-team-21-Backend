@@ -33,7 +33,10 @@
 
 ## Deployment
 - This project was built using Django 
-- Templates can be found in priceBetaProject/templates
+- The Django Project Folder is priceBetaProject
+- Frontend Project - https://github.com/zuri-training/Team_21-Price-Compare/tree/main/frontend
+- Django Project - https://github.com/zuri-training/Team_21-Price-Compare/tree/main/priceBetaProject
+- The django project should be imported to server it contains the requirements.txt file
 
 
 
