@@ -51,26 +51,3 @@ def login(request):
 
 def password_reset_form(request):
     return render(request,'registration/password_reset_form.html')
-
-def CustomUserCreationForm(request):
-    form = CustomUserCreationForm()
-
-    if request.method == "POST":
-
-
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            username = request.POST['username']
-            email = request.POST['email']
-            subject = 'Welcome to PriceBeta, the no.1 price-comparing website'
-            message = f' Hi {username},thank you for choosing priceBeta, we will ensure you get the best products for the best price.'
-            from_email = settings.EMAIL_HOST_USER
-            recipient_list = [email]
-            send_mail(subject, message, from_email, recipient_list, fail_silently=False)
-            form.save()
-            messages.info(request, "Account created successfully, you can now login")
-            return redirect("login")
-
-    return render(request, "signup.html", {"form": form})
-
-    
