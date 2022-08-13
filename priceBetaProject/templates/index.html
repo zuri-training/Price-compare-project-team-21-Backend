@@ -52,7 +52,7 @@
                   </li>
                   </li>
                   <li class="more">
-                    <span><a href="{% url 'all_laptops' %}">COMPUTING</a>
+                    <span><a href="{% url 'all_laptops' %}">LAPTOPS</a>
                     <i class='bx bxs-chevron-right arrow more-arrow'></i>
                   </span>
                     <ul class="more-sub-menu sub-menu">
@@ -122,6 +122,7 @@
 
   <div class="products-section">
 
+    <!-- Phones -->
 <div class="hcontainer">
 <h6>Top Products in Mobile Phones</h6>
 <a  href="{% url 'all_phones' %}">View more</a>
@@ -134,7 +135,7 @@
         {% if forloop.counter == 7 %}
         <img src="{{phone.image_url}}" />
         <div class="img-text">
-          <p class="phone-1"><a href="{% url 'all_phones' %}">{{ phone.name }}</a></p>
+          <p class="phone-1"><a href="{{phone.store1_url}}">{{ phone.name }}</a></p>
           <p class="phone1-price" style="color: red;">{{ phone.store1_price}}</p>
           <p class="phone1-store" style="color: gray;">Price from Jumia</p>
         </div>
@@ -148,7 +149,7 @@
           {% if forloop.counter == 5 %}
           <img src="{{phone.image_url}}" />
           <div class="img-text">
-            <p class="phone-2"><a href="{% url 'all_phones' %}">{{ phone.name }}</a></p>
+            <p class="phone-2"><a href="{{phone.store2_url}}">{{ phone.name }}</a></p>
             <p class="phone2-price" style="color: red;">{{ phone.store2_price}}</p>
           </div>
           {% endif %}
@@ -162,7 +163,7 @@
         {% if forloop.counter == 9 %}
         <img src="{{phone.image_url}}" />
         <div class="img-text">
-          <p class="phone-3"><a href="{% url 'all_phones' %}">{{ phone.name }} </a></p>
+          <p class="phone-3"><a href="{{phone.store1_url}}">{{ phone.name }} </a></p>
           <p class="phone3-price" style="color: red;">{{ phone.store1_price}}</p>
           <p class="phone3-store" style="color: gray;">Price from Jumia</p>
         {% endif %}
@@ -175,7 +176,7 @@
         {% if forloop.counter == 3 %}
         <img src="{{phone.image_url}}" />
         <div class="img-text">
-          <p class="phone-4"><a href="{% url 'all_phones' %}">{{ phone.name }}</a></p>
+          <p class="phone-4"><a href="{{phone.store2_url}}">{{ phone.name }}</a></p>
           <p class="phone4-price" style="color: red;">{{ phone.store2_price}}</p>
           <p class="phone4-store" style="color: gray;">Price from Konga</p>
         {% endif %}
@@ -189,7 +190,7 @@
         {% if forloop.counter == 4 %}
         <img src="{{phone.image_url}}" />
         <div class="img-text">
-          <p class="phone-5"><a href="{% url 'all_phones' %}">{{ phone.name }} </a></p>
+          <p class="phone-5"><a href="{{phone.store1_url}}">{{ phone.name }} </a></p>
           <p class="phone5-price" style="color: red;">{{ phone.store1_price}}</p>
           <p class="phone5-store" style="color: gray;">Price from Jumia</p>
         {% endif %}
@@ -202,9 +203,9 @@
         {% if forloop.counter == 1 %}
         <img src="{{phone.image_url}}" />
         <div class="img-text">
-          <p class="phone-6"><a href="{% url 'all_phones' %}">{{ phone.name }} </a></p>
-          <p class="phone6-price" style="color: red;">{{ phone.store1_price}}</p>
-          <p class="phone6-store" style="color: gray;">Price from Jumia</p>
+          <p class="phone-6"><a href="{{phone.store2_url}}">{{ phone.name }} </a></p>
+          <p class="phone6-price" style="color: red;">{{ phone.store2_price}}</p>
+          <p class="phone6-store" style="color: gray;">Price from Konga</p>
         {% endif %}
         {% endfor %}
         </div>
@@ -215,7 +216,7 @@
 
 <hr style="margin-bottom: 8%; margin-top: -25px; color: rgb(194, 191, 191);">
 
-
+<!-- Laptops -->
 
 <div class="hcontainer">
   <h6>Top Products in Computers</h6>
@@ -229,7 +230,7 @@
           {% if forloop.counter == 1 %}
           <img src="{{laptop.image_url}}" />
           <div class="img-text">
-            <p class="computer-1"><a href="{% url 'all_laptops' %}">{{ laptop.name }}</a></p>
+            <p class="computer-1"><a href="{{laptop.store1_url}}">{{ laptop.name }}</a></p>
             <p class="computer1-price" style="color: red;">{{ laptop.store1_price }}</p>
             <p class="computer1-store" style="color: gray;">Price from Jumia</p>
           {% endif %}
@@ -242,7 +243,7 @@
         {% if forloop.counter == 2 %}
         <img src="{{laptop.image_url}}" />
         <div class="img-text">
-          <p class="computer-2"><a href="{% url 'all_laptops' %}">{{ laptop.name }} </a></p>
+          <p class="computer-2"><a href="{{laptop.store2_url}}">{{ laptop.name }} </a></p>
           <p class="computer2-price" style="color: red;">{{ laptop.store2_price }}</p>
           <p class="computer2-store" style="color: gray;">Price from Konga</p>
         {% endif %}
@@ -255,7 +256,7 @@
         {% if forloop.counter == 3 %}
         <img src="{{laptop.image_url}}" />
         <div class="img-text">
-          <p class="computer-3"><a href="{% url 'all_laptops' %}">{{ laptop.name }}</a></p>
+          <p class="computer-3"><a href="{{laptop.store1_url}}">{{ laptop.name }}</a></p>
           <p class="computer3-price" style="color: red;">{{ laptop.store1_price }}</p>
           <p class="computer3-store" style="color: gray;">Price from Jumia</p>
         {% endif %}
@@ -268,7 +269,7 @@
         {% if forloop.counter == 4 %}
         <img src="{{laptop.image_url}}"/>
         <div class="img-text">
-          <p class="computer-4"><a href="{% url 'all_laptops' %}"> {{ laptop.name }} </a></p>
+          <p class="computer-4"><a href="{{laptop.store1_ur2}}"> {{ laptop.name }} </a></p>
           <p class="computer4-price" style="color: red;">{{ laptop.store2_price }}</p>
           <p class="computer4-store" style="color: gray;">Price from Konga</p>
         {% endif %}
@@ -281,7 +282,7 @@
         {% if forloop.counter == 5 %}
         <img src="{{laptop.image_url}}" />
         <div class="img-text">
-          <p class="computer-5"><a href="{% url 'all_laptops' %}">{{ laptop.name }} </a></p>
+          <p class="computer-5"><a href="{{laptop.store1_url}}">{{ laptop.name }} </a></p>
           <p class="computer5-price" style="color: red;">{{ laptop.store1_price }}</p>
           <p class="computer5-store" style="color: gray;">Price from Jumia</p>
         {% endif %}
@@ -294,7 +295,7 @@
         {% if forloop.counter == 7 %}
         <img src="{{laptop.image_url}}" />
         <div class="img-text">
-          <p class="computer-6"><a href="{% url 'all_laptops' %}">{{ laptop.name }} </a></p>
+          <p class="computer-6"><a href="{{laptop.store2_url}}">{{ laptop.name }} </a></p>
           <p class="computer6-price" style="color: red;">{{ laptop.store2_price }}</p>
           <p class="computer6-store" style="color: gray;">Price from Konga</p>
         {% endif %}
@@ -308,6 +309,7 @@
   <hr style="margin-bottom: 8%; margin-top: -25px; color: rgb(194, 191, 191);">
 
 
+  <!-- Accessories -->
   <div class="hcontainer">
     <h6>Top Products in Accessories</h6>
     <a  href="{% url 'all_accessory' %}">View more</a>
@@ -321,7 +323,7 @@
         {% if forloop.counter == 1 %}
           <img src="{{accessory.image_url}}" />
           <div class="img-text">
-            <p class="Accessories-1"><a href="{% url 'all_accessory' %}">{{ accessory.name }} </a></p>
+            <p class="Accessories-1"><a href="{{accessory.store2_url}}">{{ accessory.name }} </a></p>
             <p class="Accessories1-price" style="color: red;">{{ accessory.store2_price }}</p>
             <p class="Accessories1-store" style="color: gray;">Price from Konga</p>
           {% endif %}
@@ -334,7 +336,7 @@
           {% if forloop.counter == 2 %}
           <img src="{{accessory.image_url}}" />
           <div class="img-text">
-            <p class="Accessories-2"><a href="{% url 'all_accessory' %}">{{ accessory.name }}</a></p>
+            <p class="Accessories-2"><a href="{{accessory.store1_url}}">{{ accessory.name }}</a></p>
             <p class="Accessories2-price" style="color: red;">{{ accessory.store1_price }}</p>
             <p class="Accessories2-store" style="color: gray;">Price from Jumia</p>
           {% endif %}
@@ -347,7 +349,7 @@
           {% if forloop.counter == 3 %}
           <img src="{{accessory.image_url}}" />
           <div class="img-text">
-            <p class="Accessoriesr-4"><a href="{% url 'all_accessory' %}">{{ accessory.name }} </a></p>
+            <p class="Accessoriesr-4"><a href="{{accessory.store2_url}}">{{ accessory.name }} </a></p>
             <p class="Accessories4-price" style="color: red;">{{ accessory.store2_price }}</p>
             <p class="Accessories4-store" style="color: gray;">Price from Konga</p>
           {% endif %}
@@ -360,7 +362,7 @@
           {% if forloop.counter == 4 %}
           <img src="{{accessory.image_url}}" />
           <div class="img-text">
-            <p class="Accessories-5"><a href="{% url 'all_accessory' %}">{{ accessory.name }} </a></p>
+            <p class="Accessories-5"><a href="{{accessory.store1_url}}">{{ accessory.name }} </a></p>
             <p class="Accessories5-price" style="color: red;">{{ accessory.store1_price }}</p>
             <p class="Accessories5-store" style="color: gray;">Price from Jumia</p>
           {% endif %}
@@ -373,7 +375,7 @@
            {% if forloop.counter == 5 %}
             <img src="{{accessory.image_url}}" />
             <div class="img-text">
-              <p class="Accessories-5"><a href="{% url 'all_accessory' %}">{{ accessory.name }} </a></p>
+              <p class="Accessories-5"><a href="{{accessory.store1_ur2}}">{{ accessory.name }} </a></p>
               <p class="Accessories5-price" style="color: red;">{{ accessory.store2_price }}</p>
               <p class="Accessories5-store" style="color: gray;">Price from Konga</p>
             {% endif %}
