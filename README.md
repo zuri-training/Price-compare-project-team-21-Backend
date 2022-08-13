@@ -20,7 +20,7 @@
 > <a href="https://docs.google.com/spreadsheets/d/1Q-leU7gkbaB_k7wxZxNqxBdzxy9mPy5qTXtAS71bToQ/edit">Team 21_Price compare</a>
 
 ## Table of Contents
-* [Deployment]
+* [Deployment](#deployment)
 * [General Information](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
