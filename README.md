@@ -37,6 +37,7 @@
 - Frontend Project - https://github.com/zuri-training/Team_21-Price-Compare/tree/main/frontend
 - Django Project - https://github.com/zuri-training/Team_21-Price-Compare/tree/main/priceBetaProject
 - The django project should be imported to server it contains the requirements.txt file
+- Architecture used was Monolith(Django Templating)
 
 
 
