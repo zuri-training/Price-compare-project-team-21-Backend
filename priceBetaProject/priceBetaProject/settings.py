@@ -58,6 +58,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+#MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
+
 ROOT_URLCONF = 'priceBetaProject.urls'
 
 TEMPLATES = [
@@ -154,3 +157,10 @@ LOGOUT_REDIRECT_URL = "index"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'pricebetasite@gmail.com'
+EMAIL_HOST_PASSWORD = 'xlst xjky epeq emdf'
+DEFAULT_FROM_EMAIL = 'PriceBeta Team <noreply@pricebetasite.com'
