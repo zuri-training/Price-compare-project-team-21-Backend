@@ -149,3 +149,4 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'pricebetasite@gmail.com'
 EMAIL_HOST_PASSWORD = 'xlst xjky epeq emdf'
+DEFAULT_FROM_EMAIL = 'PriceBeta Team <noreply@pricebetasite.com'

@@ -29,12 +29,12 @@ def SignUpView(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password = raw_password)
             messages.success(request, 'Your account has been created successfully, you can now log in')
-            return render(request, 'registration/signup.html')
+            return render(request, 'registration/signup_success.html')
         else:
             messages.error(request, 'Invalid form submission.')
             messages.error(request, form.errors)
             #return http.HttpResponseRedirect('signup')
-            auth_login(request, user)
+            #auth_login(request, user)
         return redirect('login')
 
     else:
