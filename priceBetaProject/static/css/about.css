@@ -1,123 +1,93 @@
 @import url('http://fonts.cdnfonts.com/css/sf-pro-display');
 
-
-html{
-  scroll-behavior: smooth;
-}
-
-body{
-  background-color: #ffffff;
-}
-
 *{
- padding: 0;
- margin: 0;
- box-sizing: border-box;
- font-family: "Sf Pro Display";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Sf Pro Display";
 }
 
-nav{
-  margin: 48px 30px;
+.fs-7{
+  font-size: 18px !important;
 }
 
-ul{
- list-style-type: none;
- display: flex;
- gap: 20px;
- justify-content: flex-end;
+.fs-6{
+  font-size: 24px !important;
+  color:#323232 !important;
 }
 
-li a{
- text-decoration: none;
- color: #000000;
- font-weight: 500;
- font-size: 18px;
+.display-5{
+  font-size: 40px !important;
+  font-weight: 600 !important;
+  color: #261F1F !important;
+  margin-bottom: 28px !important;
 }
 
-.active{
- border-bottom: 2px solid #000000;
+header nav {
+    background-color: #0088CC !important;
+    color: #FFFFFF !important;
+}
+.navbar-dark .navbar-toggler{
+    box-shadow: unset !important;
+    border: unset !important;
+    color: #FFFFFF;
 }
 
-/* Main styling start from here */
-
-main{
- width: 90%;
- margin: 0 auto;
+.navbar .form-control{
+    background-color: #FFFFFF !important;
+    padding: 9px 15px !important;
+    border-radius: unset;
+    font-weight: normal !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+.navbar .form-control::placeholder {
+    color: #575757;
 }
 
-main h2{
-  font-size: 40px;
-  color: #261F1F;
-  font-weight: 600;
-  margin-bottom: 28px;
-  line-height: 47.73px;
+.navbar #button-search{
+    box-shadow: unset;
+    font-weight: normal !important;
+    border-radius: unset;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: unset;
+}
+.navbar-brand {
+    margin-right: 4rem;
+    font-style: italic;
+    font-size: 30px;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 600;
 }
 
-.content-p{
-  font-size: 24px;
-  line-height: 36px;
-  color: #323232;
-  font-weight: 400;
-  margin-bottom: 24px;
+@media screen and (min-width: 1000px) {
+    .navbar form{
+        width: 40%;
+    }
 }
 
 
 
 
-/* @media(max-width:769px){
-  nav{
-    margin: 0 35px;
+@media (max-width:600px){
+  .container{
+    padding: 0 35px !important;
   }
-  li a{
-    font-size: 20px;
-  }
-  main h4{
-   font-size: 20px;
-  }
-  
-  main{
-   width: 100%;
-   padding: 0 35px;
-  }
-  main p{
-   padding: 0;
-   font-size: 20px;
-  }
-  .content-p{
-    padding: 0;
-    
-  }
-} */
-
-
-@media (max-width: 426px){
-  
-  nav{
-     margin:35px ;
-  }
-  li a{
-    font-size: 14px;
+  .fs-7{
+  font-size: 14px !important;
   }
 
-  main{
-   width: 100%;
-   padding: 0 35px;
+  .display-5{
+    font-size: 28px !important;
+    margin-bottom: 20px !important;
   }
 
-  main h2{
-    font-size: 28px;
+  .py-5{
+    padding: 38px 0 !important;
   }
 
-  .content-p{
+  .fs-6{
     font-size: 18px !important;
-    line-height: 27px;
-    margin-bottom: 12px;
+    margin-bottom: 12px !important;
   }
-
-  .content-p:nth-child(3){
-    border-bottom: 1.5px solid #BFBFBF;
-    margin-bottom: 24px !important;
-    padding-bottom: 12px;
-  }
-
 }

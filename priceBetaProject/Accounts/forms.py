@@ -8,6 +8,7 @@ from .models import CustomUser
 
 User = get_user_model()
 
+
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Required. Input a valid email address.')
 

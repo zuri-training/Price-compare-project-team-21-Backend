@@ -5,7 +5,6 @@ from email.policy import default
 from itertools import product
 from operator import mod
 from tabnanny import verbose
-from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import User
 
