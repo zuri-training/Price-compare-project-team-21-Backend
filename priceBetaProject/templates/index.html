@@ -85,12 +85,18 @@
                   <div class="dd_right">
                     <ul>
                       <li>
+                        {% if user.is_authenticated %}
+                        <p> Hi {{ user.username }}!</p>
                            Welcome to <i><span style="color: var(--blueactive);"> Price</span><span style="color:  var(--gold);">Beta</span></i> <b>!</b>
-                         </li>
-                      <li>
-                           <button class="profile-btn1"><a href="{% url 'signup' %}">Register</a> </button>
-                         <button class="profile-btn2"><a href="{% url 'login' %}">Sign In</a> </button>
-                          </li>
+
+      
+                          <li> <button class="profile-btn1"><a href="{% url 'logout' %}">Logout</a> </button></li>
+                           {% else %}
+                          <p>You are not logged in.</p>
+                          <button class="profile-btn1"><a href="{% url 'signup' %}">Register</a> </button>
+                          <button class="profile-btn2"><a href="{% url 'login' %}">Sign In</a> </button>
+                          {% endif %}
+                      </li>
                           <hr>
                           <li><a href="#">Coupon</a></li>
                           <li><a href="{% url 'wishlist' %}">Wish List</a></li>

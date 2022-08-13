@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% block content %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PriceBeta | Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div>
+            {% for message in messages %}
+            <p id="messages">{{message}}</p>
+            {% endfor %}	
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <h1>Login</h1>
+                <input type="text" placeholder="username" name="username">
+                <input type="password" placeholder="password" name="password">
+                <input type="submit">
+            </form>
+        </div>
+    </body>
+    <footer>
+        <p>Don't have an account? <a href="{% url 'signup' %}">Signup </a></p>
+    </footer>
+</html>
+{% endblock content %}

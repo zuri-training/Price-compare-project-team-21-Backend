@@ -6,9 +6,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.core.mail import send_mail
-from .forms import CustomUserCreationForm
 from django.shortcuts import render, redirect
-from django.contrib.auth import auth_login, authenticate
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm
 
@@ -46,8 +45,28 @@ def SignUpView(request):
     # success_url = reverse_lazy("login")
     # template_name = "registration/signup.html"
 
-def login(request):
-    return render(request,'login.html')
+def loginpage(request):
+    if request.user.is_authenticated():
+        return redirect('index.html')
+    else:
+        if request.method == "POST":
+            username = request.POST.get('username', None)
+            password = request.POST.get('password', None)
+            
+            user = authenticate(username=username, password=password)
+            
+            if user is not None:
+                login(request, user)
+                return redirect('index.html')
+            else:
+                messages.info(request, "Username or Password incorrect")
+        
+        return render(request, "registration/login.html")
+
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
 
 def password_reset_form(request):
     return render(request,'registration/password_reset_form.html')
