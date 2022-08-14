@@ -48,21 +48,18 @@ def SignUpView(request):
 
 def loginpage(request):
     if request.user.is_authenticated():
-        return redirect('index.html')
+        return redirect('index')
     else:
         if request.method == "POST":
-            username = request.POST.get('username', None)
-            password = request.POST.get('password', None)
-            
+            username = request.POST.get('username')
+            password = request.POST.get('password')
             user = authenticate(username=username, password=password)
             
-            if user is not None:
-                login(request, user)
-                return redirect('index.html')
-            else:
-                messages.info(request, "Username or Password incorrect")
+
+            login(request, user)
+            return redirect('index.html')
         
-        return render(request, "registration/login.html")
+    return render(request, "registration/login.html")
 
 
 def logoutUser(request):
