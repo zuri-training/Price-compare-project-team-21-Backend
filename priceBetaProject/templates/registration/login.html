@@ -191,24 +191,22 @@
                 {% csrf_token %}
                 <div class="form-head">
                     <h2>Login</h2>
-                    <a href="{% url 'index' %}"><img style="max-width: 30px; mix-blend-mode: darken;" src="{% static 'images/cancel-icon.jpg' %}" alt=""></a>
+                    <a href="{% url 'index' %}"><img style="max-width: 30px; mix-blend-mode: darken;" src="{% static 'images/cancel icon.jpg' %}" alt=""></a>
                 </div>
 
-                
-                    <div class="input-field">
+                <div class="input-field">
 
-                        <input type="text" name="username" class="username" placeholder="Username" required>
-                        <div class="inputholder">
-                            <input id="password" type="password" placeholder="Password" name="password" required>
-                            <span id="passwordIcon" class="viewpwd material-icons">visibility</span>
-                        </div>
-                        <p><a href="#">Forgotten password?</a></p>
-                    </div> 
-    
-                    <div class="btn">
-                        <button type="submit" class="loginbtn">Log In</button>
+                    <input type="text" name="username" class="username" placeholder="Username" required>
+                    <div class="inputholder">
+                        <input id="password" type="password" name="password" placeholder="Password" required>
+                        <span id="passwordIcon" class="viewpwd material-icons">visibility</span>
                     </div>
-                
+                    <p><a href="#">Forgotten password?</a></p>
+                </div> 
+
+                <div class="btn">
+                    <button type="submit" class="loginbtn">Log In</button>
+                </div>
 
                     <p>Don't have an account? <a href="{% url 'signup' %}">Create one </a></p>
                 
