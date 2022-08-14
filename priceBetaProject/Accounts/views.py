@@ -38,6 +38,7 @@ def SignUpView(request):
             #auth_login(request, user)
         return redirect('login')
 
+
     else:
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form':form})
