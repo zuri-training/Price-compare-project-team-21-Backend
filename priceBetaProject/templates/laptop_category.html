@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>Laptop Category</title>{% endblock %}
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- bootsrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -31,7 +33,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href={% url 'index' %}>Price<span style="color: #F28202;">Beta</span></a>
+                <a class="navbar-brand" href="{% url 'index' %}">Price<span style="color: #F28202;">Beta</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -50,7 +52,7 @@
                             <a class="nav-link" href="#">All Categories</a>
                         </li>
                         <li class="nav-item me-lg-4">
-                            <a class="nav-link" href="./login.html">Log In</a>
+                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
                         </li>
                     </ul>
                 </div>
@@ -65,11 +67,10 @@
                 style="border-top: 2px solid #F0F0F0 !important; border-bottom: 2px solid #F0F0F0 !important;">
                 <div class="col-md-3 py-3 d-flex align-items-center justify-content-center"
                     style="border-right: 2px solid #F0F0F0 !important;">
-                    <select name="category" class="form-control form-select" id="">
-                        <option value="" selected>Browse Category</option>
-                        <option value="phone">Phone</option>
-                        <option value="laptop">Laptop</option>
-                        <option value="accessories">Accessories</option>
+                    <select onchange="catChange()" name="category" class="form-control form-select" id="categoryPage">
+                        <option value="phone" >Phones </option>
+                        <option value="laptop" selected>Laptops</option>
+                        <option value="accessories" >Accessories</option>
                     </select>
                 </div>
 
@@ -552,53 +553,41 @@
                     </div>
                 </aside>
 
-                <div class="products col-md-9" style="padding-top: 3rem; padding-bottom: 4rem;">
+                <div class="products col-md-9" style="padding-bottom: 4rem;">
                     <div class="row bg-white">
 
-                        <div class="col-12 bg-white pb-5" style="border-bottom: 2px solid #F0F0F0 !important;">
+                        {% for laptop in laptop_category %}
+                        <div class="col-12 bg-white pb-5" style="padding-top: 3rem; border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
                                 <div class="col-md-3">
-                                    {% for laptop in laptop_category %}
-                                    {% if forloop.counter == 1%}
+                                    
                                     <img src="{{laptop.image_url}}" alt="responsive webite"
                                     class="img-fluid p-6">
-                                    {% endif %}
-                                    {% endfor %}
-
 
                                 </div>
                                 <div class="col md-9">
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="productDetails p-7">
-                                                {% for laptop in laptop_category%}
-                                                {% if forloop.counter == 1%}
+                
                                                 <h2>{{ laptop.name }}</h2>
-                                                <p class="py-5 p-description mb-0">{{ laptop.description }}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                                {% endif %}
-                                                {% endfor %}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
+                                                <p class="py-5 p-description mb-0">{{ laptop.description }}</p>
+                                              
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 1 %}  
+                                              
                                             <p class="price px-1 py-1">{{ laptop.store1_price}}</p>
-                                            <p class="store py-5 mb-0"><a href="{{ laptop.store1_url }}">buy from jumia</a></p>
-                                            {% endif %}
-                                            {% endfor %}
+                                            <p class="store py-5 mb-0"><a href="{{laptop.store1_url }}">buy from jumia</a></p>
+                                            
                                         </div>
 
                                         <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 1 %}
+                                    
                                                 <p class="price px-1 py-1"> {{laptop.store2_price}}</p>
-                                                <p class="store py-5 mb-0"><a href="{{ laptop.store2_url}}}">buy from konga</a></p>
-                                            {% endif %}
-                                            {% endfor %}
+                                                <p class="store py-5 mb-0"><a href="{{laptop.store2_url}}">buy from Konga</a></p>
+                                            
+                                            
                                         </div>
                                     </div>
 
@@ -630,622 +619,8 @@
                             </div>
 
                         </div>
+                        {% endfor %}
 
-                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    {% for laptop in laptop_category %}
-                                    {% if forloop.counter == 2 %}
-
-                                    <img src="{{laptop.image_url}}" alt="responsive webite"
-                                    class="img-fluid p-6">
-                                    {% endif %}
-                                    {% endfor %}
-
-
-                                </div>
-                                <div class="col md-9">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="productDetails p-7">
-                                                {% for laptop in laptop_category%}
-                                                {% if forloop.counter == 2 %}
-                                                <h2>{{ laptop.name }}</h2>
-                                                <p class="py-5 p-description mb-0">{{ laptop.description }}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                                {% endif %}
-                                                {% endfor %}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 2 %}  
-                                            <p class="price px-1 py-1">{{ laptop.store1_price}}</p>
-                                            <p class="store py-5 mb-0"><a href="{{ laptop.store1_url }}">buy from jumia</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 2 %}
-                                                <p class="price px-1 py-1"> {{laptop.store2_price}}</p>
-                                                <p class="store py-5 mb-0"><a href="{{ laptop.store2_url}}}">buy from konga</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-3 p-action">
-                                        <div class="col-lg-3 col-4 text-center rating" id="rating-2">
-                                            <span class="fa fa-lg fa-star-o" data-rating="1"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="2"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="3"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="4"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="5"
-                                                onclick="setRatingVar(this);"></span>
-                                            <input type="hidden" name="review" class="rating-value" value="3">
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Write a review</a></p>
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Add to a wish list</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    {% for laptop in laptop_category %}
-                                    {% if forloop.counter == 3 %}
-
-                                    <img src="{{laptop.image_url}}" alt="responsive webite"
-                                    class="img-fluid p-6">
-                                    {% endif %}
-                                    {% endfor %}
-
-
-                                </div>
-                                <div class="col md-9">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="productDetails p-7">
-                                                {% for laptop in laptop_category%}
-                                                {% if forloop.counter == 3 %}
-                                                <h2>{{ laptop.name }}</h2>
-                                                <p class="py-5 p-description mb-0">{{ laptop.description }}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                                {% endif %}
-                                                {% endfor %}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 3 %}  
-                                            <p class="price px-1 py-1">{{ laptop.store1_price}}</p>
-                                            <p class="store py-5 mb-0"><a href="{{ laptop.store1_url }}">buy from jumia</a></p>
-                                            {% endif %}
-                                            {% endfor %}>
-                                        </div>
-
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 3 %}
-                                                <p class="price px-1 py-1"> {{laptop.store2_price}}</p>
-                                                <p class="store py-5 mb-0"><a href="{{ laptop.store2_url}}}">buy from konga</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-3 p-action">
-                                        <div class="col-lg-3 col-4 text-center rating" id="rating-3">
-                                            <span class="fa fa-lg fa-star-o" data-rating="1"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="2"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="3"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="4"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="5"
-                                                onclick="setRatingVar(this);"></span>
-                                            <input type="hidden" name="review" class="rating-value" value="4">
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Write a review</a></p>
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Add to a wish list</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    {% for laptop in laptop_category %}
-                                    {% if forloop.counter == 4 %}
-
-                                    <img src="{{laptop.image_url}}" alt="responsive webite"
-                                    class="img-fluid p-6">
-                                    {% endif %}
-                                    {% endfor %}
-
-
-                                </div>
-                                <div class="col md-9">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="productDetails p-7">
-                                                {% for laptop in laptop_category%}
-                                                {% if forloop.counter == 4 %}
-                                                <h2>{{ laptop.name }}</h2>
-                                                <p class="py-5 p-description mb-0">{{ laptop.description }}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                                {% endif %}
-                                                {% endfor %}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 4 %}  
-                                            <p class="price px-1 py-1">{{ laptop.store1_price}}</p>
-                                            <p class="store py-5 mb-0"><a href="{{ laptop.store1_url }}">buy from jumia</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 4 %}
-                                                <p class="price px-1 py-1"> {{laptop.store2_price}}</p>
-                                                <p class="store py-5 mb-0"><a href="{{ laptop.store2_url}}}">buy from konga</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-3 p-action">
-                                        <div class="col-lg-3 col-4 text-center rating" id="rating-4">
-                                            <span class="fa fa-lg fa-star-o" data-rating="1"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="2"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="3"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="4"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="5"
-                                                onclick="setRatingVar(this);"></span>
-                                            <input type="hidden" name="review" class="rating-value" value="3">
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Write a review</a></p>
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Add to a wish list</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    {% for laptop in laptop_category %}
-                                    {% if forloop.counter == 5 %}
-
-                                    <img src="{{laptop.image_url}}" alt="responsive webite"
-                                    class="img-fluid p-6">
-                                    {% endif %}
-                                    {% endfor %}
-
-
-                                </div>
-                                <div class="col md-9">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="productDetails p-7">
-                                                {% for laptop in laptop_category%}
-                                                {% if forloop.counter == 5 %}
-                                                <h2>{{ laptop.name }}</h2>
-                                                <p class="py-5 p-description mb-0">{{ laptop.description }}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                                {% endif %}
-                                                {% endfor %}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 5 %}  
-                                            <p class="price px-1 py-1">{{ laptop.store1_price}}</p>
-                                            <p class="store py-5 mb-0"><a href="{{ laptop.store1_url }}">buy from jumia</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 5 %}
-                                                <p class="price px-1 py-1"> {{laptop.store2_price}}</p>
-                                                <p class="store py-5 mb-0"><a href="{{ laptop.store2_url}}}">buy from konga</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-3 p-action">
-                                        <div class="col-lg-3 col-4 text-center rating" id="rating-5">
-                                            <span class="fa fa-lg fa-star-o" data-rating="1"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="2"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="3"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="4"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="5"
-                                                onclick="setRatingVar(this);"></span>
-                                            <input type="hidden" name="review" class="rating-value" value="3">
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Write a review</a></p>
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Add to a wish list</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    {% for laptop in laptop_category %}
-                                    {% if forloop.counter == 6 %}
-
-                                    <img src="{{laptop.image_url}}" alt="responsive webite"
-                                    class="img-fluid p-6">
-                                    {% endif %}
-                                    {% endfor %}
-
-
-                                </div>
-                                <div class="col md-9">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="productDetails p-7">
-                                                {% for laptop in laptop_category%}
-                                                {% if forloop.counter == 6 %}
-                                                <h2>{{ laptop.name }}</h2>
-                                                <p class="py-5 p-description mb-0">{{ laptop.description }}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                                {% endif %}
-                                                {% endfor %}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 6 %}  
-                                            <p class="price px-1 py-1">{{ laptop.store1_price}}</p>
-                                            <p class="store py-5 mb-0"><a href="{{ laptop.store1_url }}">buy from jumia</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 6 %}
-                                                <p class="price px-1 py-1"> {{laptop.store2_price}}</p>
-                                                <p class="store py-5 mb-0"><a href="{{ laptop.store2_url}}}">buy from konga</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-3 p-action">
-                                        <div class="col-lg-3 col-4 text-center rating" id="rating-6">
-                                            <span class="fa fa-lg fa-star-o" data-rating="1"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="2"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="3"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="4"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="5"
-                                                onclick="setRatingVar(this);"></span>
-                                            <input type="hidden" name="review" class="rating-value" value="2">
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Write a review</a></p>
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Add to a wish list</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    {% for laptop in laptop_category %}
-                                    {% if forloop.counter == 7 %}
-
-                                    <img src="{{laptop.image_url}}" alt="responsive webite"
-                                    class="img-fluid p-6">
-                                    {% endif %}
-                                    {% endfor %}
-
-
-                                </div>
-                                <div class="col md-9">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="productDetails p-7">
-                                                {% for laptop in laptop_category%}
-                                                {% if forloop.counter == 7 %}
-                                                <h2>{{ laptop.name }}</h2>
-                                                <p class="py-5 p-description mb-0">{{ laptop.description }}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                                {% endif %}
-                                                {% endfor %}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 7 %}  
-                                            <p class="price px-1 py-1">{{ laptop.store1_price}}</p>
-                                            <p class="store py-5 mb-0"><a href="{{ laptop.store1_url }}">buy from jumia</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 7 %}
-                                                <p class="price px-1 py-1"> {{laptop.store2_price}}</p>
-                                                <p class="store py-5 mb-0"><a href="{{ laptop.store2_url}}}">buy from konga</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-3 p-action">
-                                        <div class="col-lg-3 col-4 text-center rating" id="rating-7">
-                                            <span class="fa fa-lg fa-star-o" data-rating="1"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="2"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="3"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="4"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="5"
-                                                onclick="setRatingVar(this);"></span>
-                                            <input type="hidden" name="review" class="rating-value" value="3">
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Write a review</a></p>
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Add to a wish list</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    {% for laptop in laptop_category %}
-                                    {% if forloop.counter == 8 %}
-
-                                    <img src="{{laptop.image_url}}" alt="responsive webite"
-                                    class="img-fluid p-6">
-                                    {% endif %}
-                                    {% endfor %}
-
-
-                                </div>
-                                <div class="col md-9">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="productDetails p-7">
-                                                {% for laptop in laptop_category%}
-                                                {% if forloop.counter == 8 %}
-                                                <h2>{{ laptop.name }}</h2>
-                                                <p class="py-5 p-description mb-0">{{ laptop.description }}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                                {% endif %}
-                                                {% endfor %}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 8 %}  
-                                            <p class="price px-1 py-1">{{ laptop.store1_price}}</p>
-                                            <p class="store py-5 mb-0"><a href="{{ laptop.store1_url }}">buy from jumia</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 8 %}
-                                                <p class="price px-1 py-1"> {{laptop.store2_price}}</p>
-                                                <p class="store py-5 mb-0"><a href="{{ laptop.store2_url}}}">buy from konga</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-3 p-action">
-                                        <div class="col-lg-3 col-4 text-center rating" id="rating-8">
-                                            <span class="fa fa-lg fa-star-o" data-rating="1"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="2"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="3"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="4"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="5"
-                                                onclick="setRatingVar(this);"></span>
-                                            <input type="hidden" name="review" class="rating-value" value="3">
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Write a review</a></p>
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Add to a wish list</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
-
-                        <div class="col-12 bg-white py-5" style="border-bottom: 2px solid #F0F0F0 !important;">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    {% for laptop in laptop_category %}
-                                    {% if forloop.counter == 9 %}
-
-                                    <img src="{{laptop.image_url}}" alt="responsive webite"
-                                    class="img-fluid p-6">
-                                    {% endif %}
-                                    {% endfor %}
-
-
-                                </div>
-                                <div class="col md-9">
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="productDetails p-7">
-                                                {% for laptop in laptop_category%}
-                                                {% if forloop.counter == 9 %}
-                                                <h2>{{ laptop.name }}</h2>
-                                                <p class="py-5 p-description mb-0">{{ laptop.description }}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                                {% endif %}
-                                                {% endfor %}
-                                                    <a href="" class="textButton text-decoration-none">more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 9 %}  
-                                            <p class="price px-1 py-1">{{ laptop.store1_price}}</p>
-                                            <p class="store py-5 mb-0"><a href="{{ laptop.store1_url }}">buy from jumia</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-
-                                        <div class="col-md-4 col-6 text-center">
-                                            {% for laptop in laptop_category %}
-                                            {% if forloop.counter == 9 %}
-                                                <p class="price px-1 py-1"> {{laptop.store2_price}}</p>
-                                                <p class="store py-5 mb-0"><a href="{{ laptop.store2_url}}}">buy from konga</a></p>
-                                            {% endif %}
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-
-                                    <div class="row mt-3 p-action">
-                                        <div class="col-lg-3 col-4 text-center rating" id="rating-9">
-                                            <span class="fa fa-lg fa-star-o" data-rating="1"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="2"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="3"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="4"
-                                                onclick="setRatingVar(this);"></span>
-                                            <span class="fa fa-lg fa-star-o" data-rating="5"
-                                                onclick="setRatingVar(this);"></span>
-                                            <input type="hidden" name="review" class="rating-value" value="4">
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Write a review</a></p>
-                                        </div>
-                                        <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Add to a wish list</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                            </div>
-
-                        </div>
                     </div>
 
                     <div class="row text-center"
@@ -1386,25 +761,25 @@
 
                 <ul class="foot-nav">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{% url 'index' %}">Home</a>
                     </li>
                     <li>
                         <a href="#">Category</a>
                     </li>
                     <li>
-                        <a href="./about.html">About</a>
+                        <a href="{% url 'about' %}">About</a>
                     </li>
                     <li>
                         <a href="./docs/">Documentation</a>
                     </li>
                     <li>
-                        <a href="./signup.html">Register</a>
+                        <a href="{% url 'signup' %}">Register</a>
                     </li>
                     <li>
-                        <a href="./term.html">Terms</a>
+                        <a href="{% url 'term' %}">Terms</a>
                     </li>
                     <li>
-                        <a href="./privacy.html">Privacy</a>
+                        <a href="{% url 'privacy' %}">Privacy</a>
                     </li>
                     <li>
                         <a href="#">Subscribe</a>
@@ -1434,6 +809,31 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="./static/js/category.js"></script>
+    <script>
+        $(document).ready(function(){
+            var maxLength = 50;
+            $(".p-description").each(function(){
+                var myStr = $(this).text();
+                if($.trim(myStr).length > maxLength){
+                    var newStr = myStr.substring(0, maxLength);
+                    var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                    $(this).empty().html(newStr);
+                    $(this).append(' ...');
+                    // $(this).append('<span class="more-text">' + removedStr + '</span>');
+                };
+            });
+        });
+
+        function catChange() {
+            if (document.getElementById("categoryPage").value == "phone") {
+                window.location.href = "{% url 'all_phones' %}";
+            } else if (document.getElementById("categoryPage").value == "laptop") {
+                window.location.href = "{% url 'all_laptops' %}";
+            } else if (document.getElementById("categoryPage").value == "accessories") {
+                window.location.href = "{% url 'all_accessory' %}";
+            }
+        }
+    </script>
 </body>
 
 </html>
