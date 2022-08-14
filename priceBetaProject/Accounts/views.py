@@ -58,7 +58,7 @@ def loginpage(request):
             
             if user is not None:
                 login(request, user)
-                return redirect('index.html')
+                return redirect('index')
             else:
                 messages.info(request, "Username or Password incorrect")
         
