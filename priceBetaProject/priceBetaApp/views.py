@@ -32,6 +32,7 @@ def term(request):
 def wishlist(request):
     return render(request,'wishlist.html')
 
+@login_required
 def review(request):
     return render(request,'review.html')
 
@@ -58,10 +59,12 @@ def all_laptops(request):
 
 # def phone_category(request):
 #     return render(request,'phone_category.html')
-@login_required(login_url = 'login')
+@login_required
 def all_phones(request):
     phone_category = Product.objects.filter(category_id=1)
     return render(request, 'phone_category.html', {'phone_category': phone_category})
+
+
 
 
 # def Product(request):
