@@ -53,7 +53,7 @@
                             <a class="nav-link" href="#">All Categories</a>
                         </li>
                         <li class="nav-item me-lg-4">
-                            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                            <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
                         </li>
                     </ul>
                 </div>
@@ -613,7 +613,7 @@
                                             <p class="shop"><a href="#">Write a review</a></p>
                                         </div>
                                         <div class="col-lg-3 col-4 text-center">
-                                            <p class="shop"><a href="#">Add to a wish list</a></p>
+                                            <p class="shop"><a href="{{accessory.id}}">Add to a wish list</a></p>
                                         </div>
                                     </div>
                                 </div>

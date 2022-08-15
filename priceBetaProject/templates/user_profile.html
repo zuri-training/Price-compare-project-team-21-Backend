@@ -22,6 +22,7 @@
 <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
 </head>
 <body>
+  {% if user.is_authenticated %}
     <header class="position-sticky top-0" style="z-index: 55;">
         <nav class="nav-bar">
              <div class="logo">
@@ -39,7 +40,7 @@
                     <div class="display-info">
                          <div class="info" id="info">
                               <img src="{% static 'images/user-dp.png' %}" alt="user-dp">
-                              <p style="margin-bottom: 0; margin-right:10px" class="mid">Kesha Midrick </p>
+                              <p style="margin-bottom: 0; margin-right:10px" class="mid">{{ user.username }}</p>
                               <div class="chev-up" id="chev">
                                   <i class="bi bi-chevron-up"></i>
                               </div>
@@ -47,7 +48,7 @@
                                    <a class="profile" href="{% url 'user_profile' %}">My Profile</a> <br>
                                    <a class="subscribe"href="#">Newsletter Subscription</a><br>
                                    <a class="reviews" href="#">My reviews</a> <br>
-                                   <a class="log-out" href="#">Log out</a>
+                                   <a class="log-out" href="{% url 'logout' %}">Log out</a>
                               </div>
                          </div>
                          
@@ -57,8 +58,8 @@
                    <!-- <div class="location d-lg-block d-sm-none">
                        
                        <img src="./assets/images/nigeria.png" alt="nigeria">
-                       <i class="bi bi-chevron-down"></i> -->
-                   </div>
+                       <i class="bi bi-chevron-down"></i> 
+                   </div>-->
              </div>
              
              
@@ -67,51 +68,34 @@
     <main class="">
          <div class="container py-5 mt-5">
               <div class="wrapper d-flex flex-lg-row flex-sm-column">
-                   <div class="display-img me-5 d-flex flex-column align-items-center">
-                        <img class="mb-5" src="{% static 'icons/display-img.png' %}" alt="">
-                        <div class="d-flex flex-column justify-content-center align-items-center">
-                             <div class="picture mb-3 ">
-                                   <a href="#" class="bg-primary text-light text-decoration-none text-center py-1 px-3 fs-6 rounded">Change Picture</a>
-                             </div>
-                             <div class="password">
-                                   <a href= "{% url 'password_reset_form' %}"class="bg-warning text-decoration-none py-1 px-4 text-light text-center fs-6 rounded">change Password</a>
-                              </div>
-                         </div>
-                   </div>
+                
                    <div class="user-info">
-                      <div class="name d-flex align-items-center border-bottom pb-2 mb-5">
-                           <p class="fs-7 mb-0 fw-bolder" style="margin-right: 200px;">Name:</p> 
-                           <p class="fs-7 mb-0 fw-bold edit">Edit</p>
+                      <div class="name d-flex align-items-center border-bottom pb-2 mb-5" style="gap: 20px;">
+                           <p class="mb-0 fw-bolder">User Name:</p> 
+                           <span>{{ user.username }}</span>
                       </div>
-                      <div class="emai d-flex align-items-center mb-4">
-                           <p class="fs-7 mb-0 me-2 fw-bolder">Emails:</p>
-                           <button class="bg-primary text-light fs-7 px-1 rounded border-0 fw-bold add-email">Add Email:</button>
+                      <div class="emai d-flex align-items-center mb-4" style="gap: 20px;">
+                           <p class="mb-0 me-2 fw-bolder">Emails:</p>
+                           <span>{{ user.email }}</span>
                       </div>
-                      <div class="text-center border-bottom pb-2 verify">
-                           <p class="fs-7 mb-0 fw-bold">Verify <span style="display: none;">:</span></p>
+
+                      <div class="name d-flex align-items-center border-bottom pb-2 mb-5" style="gap: 20px;">
+                        <p class="mb-3 fw-bolder" style="padding-top: 1rem !important;">Member since:</p>
+                        <span>{{ user.date_joined }}</span>
                       </div>
                         
-                        <p class="fs-7 mb-3 border-bottom py-3 fw-bolder">Member since:</p>
-                        
-                        <div class="linked d-flex align-items-center">
-                             <p class="fs-7 mb-0 me-4 fw-bolder">Linked Accounts</p>
-                        <div class="links d-flex">
-                              <a href="#" class="fs-7 bg-primary text-light p-2 d-flex align-items-center text-decoration-none rounded fw-bold">
-                              <img class="img-fluid me-1" src="{% static 'icons/fb.png' %}" alt="display-img">
-                              Link with facebook
-                              </a>
-                              <a href="#" class="fs-7 bg-primary text-light p-2 mb-0 d-flex align-items-center text-decoration-none rounded fw-bold">
-                                 <img class="img-fluid me-1" src="{% static 'icons/google.png' %}" alt="">
-                                 Link with google plus
-                               </a>
+                        <div class="password">
+                          <a href= "{% url 'password_reset_form' %}"class="bg-warning text-decoration-none py-1 px-4 text-light text-center fs-6 rounded">change Password</a>
                         </div>
                         </div>
                         
                         
                    </div>
+                   
               </div>
          </div>
     </main>
+    {% endif %}
     <footer>
   <!-- <div class="footer-sections"> -->
   <div class="footer-section1">
