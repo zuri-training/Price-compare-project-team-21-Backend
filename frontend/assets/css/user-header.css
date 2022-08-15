@@ -178,6 +178,7 @@ header {
 
 @media (max-width: 500px) {
     header {
+        margin-top: 37px;
         background-color: #0088cc;
         padding: 0;
     }

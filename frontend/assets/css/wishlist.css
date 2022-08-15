@@ -12,7 +12,8 @@ body{
 }
 
 .new-wishlist{
-  margin-bottom: 30px;
+  margin-top: 300px;
+  margin-bottom: 10px;
 }
 
 .category p, .wish-list p, .new-wishlist p{
