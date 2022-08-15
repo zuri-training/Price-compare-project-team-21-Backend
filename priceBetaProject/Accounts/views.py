@@ -34,7 +34,7 @@ def SignUpView(request):
         else:
             messages.error(request, 'Invalid form submission.')
             messages.error(request, form.errors)
-            #return http.HttpResponseRedirect('signup')
+            return render(request, 'signup')
             #auth_login(request, user)
         return redirect('login')
 
