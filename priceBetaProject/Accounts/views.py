@@ -46,14 +46,14 @@ def SignUpView(request):
     # success_url = reverse_lazy("login")
     # template_name = "registration/signup.html"
 
-def loginpage(request):
-    if request.user.is_authenticated():
-        return redirect('index')
-    else:
-        if request.method == "POST":
-            username = request.POST.get('username')
-            password = request.POST.get('password')
-            user = authenticate(username=username, password=password)
+# def loginpage(request):
+#     if request.user.is_authenticated():
+#         return redirect('index')
+#     else:
+#         if request.method == "POST":
+#             username = request.POST.get('username')
+#             password = request.POST.get('password')
+#             user = authenticate(username=username, password=password)
             
 
 def loginpage(request):
