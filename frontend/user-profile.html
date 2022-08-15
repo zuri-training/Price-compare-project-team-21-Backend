@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Profile</title>
+ <!-- Font Awesome 6 css -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+ integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+ crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <!-- Bootstrap Css -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <!-- Bootstrap Icon -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+ <!-- Custom Css -->
+ <link rel="stylesheet" href="./assets/css/user.css">
+ <!-- Header Css -->
+ <link rel="stylesheet" href="./assets/css/user-header.css">
+ <!-- Footer Css -->
+ <link rel="stylesheet" href="./assets/css/footer.css">
+<!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+</head>
+<body>
+    <header class="position-sticky top-0" style="z-index: 55;">
+        <nav class="nav-bar">
+             <div class="logo">
+                   <a href="./index.html" style="color: white;" class="">Price<span style="color: var(--gold);">Beta</span></a>
+             </div>
+             <div class="form">
+                   <form class="search-bar">
+                     <input type="text" name="search" id="search" placeholder="Search Product">
+                     <button type="submit">Search</button>
+                   </form>
+             </div>
+             
+             <div class="user-infos">
+                    <div class="display-info">
+                         <div class="info" id="info">
+                              <img src="./assets/images/user-dp.png" alt="user-dp">
+                              <p style="margin-bottom: 0; margin-right:10px" class="mid">Kesha Midrick </p>
+                              <div class="chev-up" id="chev">
+                                  <i class="bi bi-chevron-up"></i>
+                              </div>
+                              <div class="options" id="option">
+                                   <a class="profile" href="user.html">My Profile</a> <br>
+                                   <a class="subscribe"href="#">Newsletter Subscription</a><br>
+                                   <a class="reviews" href="#">My reviews</a> <br>
+                                   <a class="log-out" href="./login.html">Log out</a>
+                              </div>
+                         </div>
+                         
+                         
+                    </div>
+                      
+                   <!-- <div class="location d-lg-block d-sm-none">
+                       
+                       <img src="./assets/images/nigeria.png" alt="nigeria">
+                       <i class="bi bi-chevron-down"></i> -->
+                   </div>
+             </div>
+             
+             
+        </nav>
+    </header>
+    <main class="">
+         <div class="container py-5 mt-5">
+              <div class="wrapper d-flex flex-lg-row flex-sm-column">
+                   <div class="display-img me-5 d-flex flex-column align-items-center">
+                        <img class="mb-5" src="./assets/icons/display-img.png" alt="">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                             <div class="picture mb-3 ">
+                                   <a href="#" class="bg-primary text-light text-decoration-none text-center py-1 px-3 fs-6 rounded">Change Picture</a>
+                             </div>
+                             <div class="password">
+                                   <a href="#" class="bg-warning text-decoration-none py-1 px-4 text-light text-center fs-6 rounded">change Password</a>
+                              </div>
+                         </div>
+                   </div>
+                   <div class="user-info">
+                      <div class="name d-flex align-items-center border-bottom pb-2 mb-5">
+                           <p class="fs-7 mb-0 fw-bolder" style="margin-right: 200px;">Name:</p> 
+                           <p class="fs-7 mb-0 fw-bold edit">Edit</p>
+                      </div>
+                      <div class="emai d-flex align-items-center mb-4">
+                           <p class="fs-7 mb-0 me-2 fw-bolder">Emails:</p>
+                           <button class="bg-primary text-light fs-7 px-1 rounded border-0 fw-bold add-email">Add Email:</button>
+                      </div>
+                      <div class="text-center border-bottom pb-2 verify">
+                           <p class="fs-7 mb-0 fw-bold">Verify <span style="display: none;">:</span></p>
+                      </div>
+                        
+                        <p class="fs-7 mb-3 border-bottom py-3 fw-bolder">Member since:</p>
+                        
+                        <div class="linked d-flex align-items-center">
+                             <p class="fs-7 mb-0 me-4 fw-bolder">Linked Accounts</p>
+                        <div class="links d-flex">
+                              <a href="#" class="fs-7 bg-primary text-light p-2 d-flex align-items-center text-decoration-none rounded fw-bold">
+                              <img class="img-fluid me-1" src="./assets/icons/fb.png" alt="display-img">
+                              link with facebook
+                              </a>
+                              <a href="#" class="fs-7 bg-primary text-light p-2 mb-0 d-flex align-items-center text-decoration-none rounded fw-bold">
+                                 <img class="img-fluid me-1" src="./assets/icons/google.png" alt="">
+                                 link with google plus
+                               </a>
+                        </div>
+                        </div>
+                        
+                        
+                   </div>
+              </div>
+         </div>
+    </main>
+    <footer>
+  <!-- <div class="footer-sections"> -->
+  <div class="footer-section1">
+
+  <div class="social-icons">
+<h3 style="margin-bottom: 3px;"><i>Price<span style="color: var(--gold)">Beta</span></i></h3>
+  
+  <div class="socials">
+    <div class="first-row">
+      <a href="#"><i class="fa-regular fa-envelope" style="color: black;"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+    <div class="second-row" style="padding-top: 4%;">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-telegram"></i></a>
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-google-play"></i></a>
+    </div>
+  </div>
+</div>
+  <div class="top-searches">
+    <h4>Top Searches</h4>
+    <ul>
+      <li>
+        <a href="#">Iphone 13 pro max</a>
+      </li>
+      <li>
+        <a href="#">Iphone Xr</a>
+      </li>
+      <li>
+        <a href="#">Galaxy S22</a>
+      </li>
+      <li>
+        <a href="#">Galaxy A53</a>
+      </li>
+      <li>
+        <a href="#">Google pixel 6 pro</a>
+      </li>
+      <li>
+        <a href="#">Macbook</a>
+      </li>
+    </ul>
+    
+  </div>
+
+  <div class="top-brand">
+    <h4>Top Brands</h4>
+    <ul>
+      <li>
+        <a href="#">Samsung</a>
+      </li>
+      <li>
+        <a href="#">Apple</a>
+      </li>
+      <li>
+        <a href="#">Google</a>
+      </li>
+       
+    </ul>
+
+  </div>
+
+  <div class="top-stores">
+    <h4>Top Stores</h4>
+    <ul>
+      <li>
+        <a href="#">Jumia</a>
+      </li>
+      <li>
+        <a href="#">Konga</a>
+      </li>
+      <li>
+        <a href="#">Jiji</a>
+      </li>
+    </ul>
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="footer-section2">
+  <div class="copyright">
+    <i class="fas fa-copyright"></i>
+    <span style="color: #000;">2022</span>
+     <div class="vl"></div>
+    <h3><i><span style="color: var(--blueactive);">Price</span><span style="color: var(--gold);">Beta</span></i></h3>
+  </div>
+
+  <div class="footer-nav">
+
+    <ul class="foot-nav">
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="#">Category</a>
+      </li>
+      <li>
+        <a href="about.html">About</a>
+      </li>
+      <li>
+        <a href="./docs/">Documentation</a>
+      </li>
+      <li>
+        <a href="./signup.html">Register</a>
+      </li>
+      <li>
+        <a href="term.html">Terms</a>
+      </li>
+      <li>
+        <a href="privacy.html">Privacy</a>
+      </li>
+      <li>
+        <a href="#">Subscribe</a>
+      </li>
+      <li>
+        <a href="#">Support</a>
+      </li>
+    </ul>
+
+  </div>
+</div>
+</div>
+<div class="show">
+  <i class="fas fa-copyright"></i>
+  <span> 2022</span>
+</div>
+
+</footer>
+    <script src="./assets/js/user-header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

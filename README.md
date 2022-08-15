@@ -20,6 +20,7 @@
 > <a href="https://docs.google.com/spreadsheets/d/1Q-leU7gkbaB_k7wxZxNqxBdzxy9mPy5qTXtAS71bToQ/edit">Team 21_Price compare</a>
 
 ## Table of Contents
+* [Deployment](#deployment)
 * [General Information](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
@@ -29,6 +30,15 @@
 * [Collaboration](#collaboration)
 * [Contributors](#contributors)
 * [Acknowledgements](#acknowledgements)
+
+## Deployment
+- This project was built using Django 
+- The Django Project Folder is priceBetaProject
+- Frontend Project - https://github.com/zuri-training/Team_21-Price-Compare/tree/main/frontend
+- Django Project - https://github.com/zuri-training/Team_21-Price-Compare/tree/main/priceBetaProject
+- The django project should be imported to server it contains the requirements.txt file
+- Architecture used was Monolith(Django Templating)
+
 
 
 ## General Information
@@ -40,9 +50,10 @@
 
 ## Technologies Used
 - HTML/CSS/Javascript (Frontend)
-- MYSQL (Database)
+- DB.SQLITE (Database)
 - Bootstrap - version 5.0 (Frontend Library)
-- Django - version 4.0 (Backend)
+- Django - version 4.0.5 (Backend)
+- Python - version 3.10.5 
 
 
 ## Features
