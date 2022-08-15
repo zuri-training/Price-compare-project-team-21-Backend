@@ -88,9 +88,15 @@
         }
 
         .box-cont {
-            /* margin-bottom: 3rem; */
             background-repeat: no-repeat;
             background-size: cover;
+        }
+
+        .box-1,
+        .box-2,
+        .box-3 {
+            padding-right: 4rem !important;
+            
         }
 
         .box-1 {
@@ -108,10 +114,19 @@
         /* large mobile*/
         @media screen and (max-width: 767px) {
 
+            .box-1 > div,
+            .box-2 > div,
+            .box-3 > div{
+                margin-right: auto !important;
+                margin-left: auto !important;
+            }
+
             .box-1,
             .box-2,
             .box-3 {
                 width: 100% !important;
+                padding-right: calc(var(--bs-gutter-x) * .5) !important;
+
             }
 
             .poly {
@@ -190,67 +205,60 @@
 
                 </aside>
 
-                <div class="main-content col-md-9" style="padding-bottom: 4rem;">
-                    <div class="title row bg-white d-flex align-items-center mb-5" style="padding: 2rem 0;">
-                        <div class="col-12">
+                <div class="main-content col-md-9 bg-white">
+                    <div class="row" >
+                        <div class="title col-12 bg-white d-flex align-items-center mb-5" style="padding: 2rem 0;">
                             <h3 class="my-0" style="color: #414141;">How does it works </h3>
                         </div>
-                    </div>
-
-                    <div class="row position-relative" style="overflow-x: visible;">
-
-
-
-                        <div class="box-cont" style="">
+                    
+                        <div class="col-12 my-0">
                             <img src="../assets/images/unsplash_UTw3j_aoIKM.png" class="img-fluid" alt="">
-
                         </div>
 
-                        <div class="box-1 ms-auto box-cont" style="">
-                            <div class="col-lg-10 col-11 my-5 p-3 mx-auto sect-box">
-                                <h4>HOW DOES IT WORK</h4>
-                                <p>
-                                    As a User all you need to do is open an account with Pricebeta,
-                                    subscribe to our newsletter channel to get updated prices on products across your
-                                    favorite online stores. visit the site whenever you are in doubt of a certain
-                                    product’s price or whenever you are looking for a comfortable price that meets your
-                                    budget all you need to do is type the name of the product in the search bar and the
-                                    product will pop up with the price it is going for in different online store
-                                </p>
+                        <div class="my-0 col-12 position-relative bg-white">
+                            <div class="py-5" style="background-color: #F8F5F5 !important;">
+                                <div class="box-1 ms-md-auto box-cont">
+                                    <div class="col-lg-10 col-11 mb-5 p-3 ms-md-auto sect-box">
+                                        <h4>HOW DOES IT WORK</h4>
+                                        <p>
+                                            As a User all you need to do is open an account with Pricebeta,
+                                            subscribe to our newsletter channel to get updated prices on products across your
+                                            favorite online stores. visit the site whenever you are in doubt of a certain
+                                            product’s price or whenever you are looking for a comfortable price that meets your
+                                            budget all you need to do is type the name of the product in the search bar and the
+                                            product will pop up with the price it is going for in different online store
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="box-2 ms-md-auto box-cont">
+                                    <div class="col-lg-10 col-11 my-5 p-3 ms-md-auto sect-box">
+                                        <h4>Browse categories</h4>
+                                        <p>
+                                            Now that you’ve gotten started with Pricebeta you can easily find your choice
+                                            product by clicking the dropdown arrow on the browse category option, there you’d
+                                            find numerous options of gadgets and elctronics to pick from.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="box-3 ms-md-auto box-cont">
+                                    <div class="col-lg-10 col-11 my-5 p-3 ms-md-auto sect-box">
+                                        <h4>Select choice product</h4>
+                                        <p>                                    
+                                            Select your favorite item and price that meets your budget by clicking on the
+                                            respective link which will take you to the page to make your purchase, you can also
+                                            add to cart.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 d-flex justify-content-start">
+                                    <img src="../assets/images/Group 2425.png" class="poly position-absolute"
+                                        style="width: 65%; bottom: 15px; left: -10rem;" alt="">
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="box-2 ms-auto box-cont" style="">
-                            <div class="col-lg-10 col-11 my-5 p-3 mx-auto sect-box">
-                                <h4>Browse categories</h4>
-                                <p>
-                                    Now that you’ve gotten started with Pricebeta you can easily find your choice
-                                    product by clicking the dropdown arrow on the browse category option, there you’d
-                                    find numerous options of gadgets and elctronics to pick from.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="box-3 ms-auto box-cont" style="">
-                            <div class="col-lg-10 col-11 my-5 p-3 mx-auto sect-box">
-                                <h4>Select choice product</h4>
-                                <p>                                    
-                                    Select your favorite item and price that meets your budget by clicking on the
-                                    respective link which will take you to the page to make your purchase, you can also
-                                    add to cart.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-12 d-flex justify-content-start">
-                            <img src="../assets/images/Group 2425.png" class="poly position-absolute"
-                                style="width: 65%; bottom: 15px; left: -10rem;" alt="">
-                        </div>
-
                     </div>
-
-
-                </div>
             </div>
         </div>
     </main>
