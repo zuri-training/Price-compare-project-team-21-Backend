@@ -16,7 +16,7 @@ from .forms import SignUpForm
 def SignUpView(request):
     if request.method =='POST':
         form = SignUpForm(request.POST)
-        if password1 == password2:
+        if form.is_valid():
             form.save()
             username = request.POST['username']
             email = request.POST['email']
@@ -34,7 +34,7 @@ def SignUpView(request):
         else:
             messages.error(request, 'Invalid form submission.')
             messages.error(request, form.errors)
-            return render(request, 'registration/signup.html')
+            #return render(request, 'registration/signup.html')
             #auth_login(request, user)
         return redirect('login')
 
