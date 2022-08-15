@@ -558,14 +558,16 @@
                         {% for phone in phone_category %}
                         <div class="col-12 bg-white pb-5" style="padding-top: 3rem; border-bottom: 2px solid #F0F0F0 !important;">
                             <div class="row">
+                                <!-- Product Image -->
                                 <div class="col-md-3">
-                                    
-                                    
+
                                     <img src="{{phone.image_url}}" alt="responsive webite"
                                     class="img-fluid p-6">
 
                                 </div>
+                                <!-- Price and Ratings -->
                                 <div class="col md-9">
+                                    <!-- Name Price -->
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="productDetails p-7">
@@ -585,11 +587,10 @@
                                             
                                                 <p class="price px-1 py-1">₦ {{phone.store2_price}}</p>
                                                 <p class="store py-5 mb-0"><a href="{{phone.store2_url}}">buy from Konga</a></p>
-                                            
-                                        </div>
                                         </div>
                                     </div>
 
+                                    <!-- Ratings Review and wishlist -->
                                     <div class="row mt-3 p-action">
                                         <div class="col-lg-3 col-4 text-center rating" id="rating-1">
                                             <span class="fa fa-lg fa-star-o" data-rating="1"
@@ -612,8 +613,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
 
                             </div>
 
