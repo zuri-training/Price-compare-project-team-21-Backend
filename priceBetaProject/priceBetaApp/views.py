@@ -28,6 +28,9 @@ def privacy(request):
 def term(request):
     return render(request,'term.html')
 
+def documentation(request):
+    return render(request,'documentation.html')
+
 @login_required
 def wishlist(request):
     return render(request,'wishlist.html')
