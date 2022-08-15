@@ -191,17 +191,17 @@
                 {% csrf_token %}
                 <div class="form-head">
                     <h2>Login</h2>
-                    <a href="{% url 'index' %}"><img style="max-width: 30px; mix-blend-mode: darken;" src="{% static 'images/cancel icon.jpg' %}" alt=""></a>
+                    <a href="{% url 'index' %}"><img style="max-width: 30px; mix-blend-mode: darken;" src="{% static 'images/cancel-icon.jpg' %}" alt=""></a>
                 </div>
 
                 <div class="input-field">
 
                     <input type="text" name="username" class="username" placeholder="Username" required>
                     <div class="inputholder">
-                        <input id="password" type="password" placeholder="Password" required>
+                        <input id="password" type="password" placeholder="Password" name="password" required>
                         <span id="passwordIcon" class="viewpwd material-icons">visibility</span>
                     </div>
-                    <p><a href="#">Forgotten password?</a></p>
+                    <p><a href="{% url 'password_reset_form' %}">Forgotten password?</a></p>
                 </div> 
 
                 <div class="btn">
